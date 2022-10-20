@@ -11,13 +11,13 @@ as a user, i want to search the game that i want to see the description, genre, 
 As user not signed in , is possible to access the follow features:
 ***
 * The home page with all the games.
-*The game page with the reviews.
-*Search bar for the games.
-*Register section.
+* The game page with the reviews.
+* Search bar for the games.
+* Register section.
 
 As a logged in user , is possible to access the same features as the above plus:
 ***
-*Writing a review for the game.
-*Access to the favorites page.
-*Get statics about the game.
-*Connection with steam.
+* Writing a review for the game.
+* Access to the favorites page.
+* Get statics about the game.
+* Connection with steam.
