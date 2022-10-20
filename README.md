@@ -10,7 +10,7 @@ as a user, i want to search the game that i want to see the description, genre, 
 # User Scenarios
 As user not signed in , is possible to access the follow features:
 ***
-*The home page with all the games.
+* The home page with all the games.
 *The game page with the reviews.
 *Search bar for the games.
 *Register section.
