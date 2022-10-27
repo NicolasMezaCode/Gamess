@@ -21,8 +21,8 @@ export default function Slider() {
     // },[counter])
 
   return (
-    <section className=''>
-        <figure className='flex justify-center items-center w-[100%] h-[29rem]  '><img className='z-10 w-[100%] h-full object-cover' src={images[counter]} alt="" /></figure>
-    </section>
+    <div className=''>
+        <figure className='flex justify-center items-center w-[100%] h-[29rem]  '><img className='z-20 w-[100%] h-full object-cover' src={images[counter]} alt="" /></figure>
+    </div>
   )
 }
