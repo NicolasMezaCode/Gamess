@@ -1,6 +1,4 @@
-import Navbar from "./components/Navbar"
-import Slider from "./components/Slider"
-import Main from "./components/Main"
+import Navbar from "./components/Header/Navbar"
 function App() {
   
   return (
