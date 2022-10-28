@@ -9,7 +9,7 @@ import Main from "./components/Main.jsx"
 function App() {
   
   return (
-    <div className="App">
+    <div className="App bg-not-white">
       <Navbar/>
       <Slider/>
       <Main />

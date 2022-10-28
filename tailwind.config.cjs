@@ -20,8 +20,8 @@ module.exports = {
         '4':'-3deg'
       },
       colors:{
-        'eastern-blue':'#008294'
-
+        'eastern-blue':'#008294',
+        'not-white':'#E5E5E5'
       },
       boxShadow:{
         '3xl': '0 6px 6px  rgba(0, 0, 0, 0.35)'
