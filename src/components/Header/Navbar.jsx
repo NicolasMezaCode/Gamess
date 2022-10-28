@@ -8,12 +8,12 @@ export default function Navbar() {
   return (
     <nav className='flex p-1 bg-gray-300'>
 
-      <div className='w-48 inline-flex gap-3 my-auto mx-3'>
+      <div className='w-48 inline-flex my-auto mx-3'>
         <div>
           <img classname='' src={logo} alt="Website Logo" />
         </div>
         <div>
-          <h2 className='text-4xl font-bebas'>Gamess</h2>
+          <h2 className='text-4xl font-poppins'>Gamess</h2>
         </div>
       </div>
       
@@ -21,11 +21,11 @@ export default function Navbar() {
 
       <ButtonExampleAnimated />
 
-      {/* <div className='mt-3 mr-10 mb-3 ml-auto '>
-        <button className='p-1 px-8 rounded-md bg-cyan-500 mr-3.5' >Log in</button>
-        <button className='p-1 px-8 rounded-md bg-neutral-800 text-white'>Register</button>
+      <div className='mt-3 mr-10 mb-3 ml-auto '>
+        <button className='py-2 px-8 rounded-md bg-gray-100 mr-3.5 hover:rounded-xl hover:bg-cyan-400 transition-all duration-300 ease-linear cursor-pointer' >Log in</button>
+        <button className='py-2 px-8 rounded-md bg-neutral-800 hover:bg-cyan-400 text-white hover:text-black hover:rounded-xl  transition-all duration-300 ease-linear cursor-pointer'>Register</button>
       </div>
-       */}
+      
     </nav>
   )
 }
