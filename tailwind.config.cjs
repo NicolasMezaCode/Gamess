@@ -21,6 +21,7 @@ module.exports = {
       },
       colors:{
         'eastern-blue':'#008294'
+
       },
       boxShadow:{
         '3xl': '0 6px 6px  rgba(0, 0, 0, 0.35)'
@@ -30,7 +31,11 @@ module.exports = {
       },
       letterSpacing:{
         'big':'0.14em'
-      }
+      },
+      spacing: {
+        '128': '32rem',
+        '136': '40rem',
+      },
     },
   },
   plugins: [],

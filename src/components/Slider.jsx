@@ -5,7 +5,7 @@ import spider from '../assets/spiderman.jpg'
 import { useEffect } from 'react'
 export default function Slider() {
     const [counter,setCounter]=useState(0)
-    const images=[readDead,elden,spider]
+    const images=[elden,readDead,spider]
     const changeImage=()=>{
         if(counter<images.length-1){
             setCounter(prev=>prev+1)

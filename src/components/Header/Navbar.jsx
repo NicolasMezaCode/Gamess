@@ -1,5 +1,6 @@
 import React from 'react'
-import Searchbar from './Searchbar'
+import Searchbarmenu from './Searchbar'
+import ButtonExampleAnimated from './Buttons'
 import logo from '../../../public/game-icons_game-console.svg'
 
 
@@ -12,15 +13,19 @@ export default function Navbar() {
           <img classname='' src={logo} alt="Website Logo" />
         </div>
         <div>
-          <h2 className='text-4xl'>Gamess</h2>
+          <h2 className='text-4xl font-bebas'>Gamess</h2>
         </div>
       </div>
       
-      <Searchbar />
-      <div className='mt-3 mr-10 mb-3 ml-auto '>
+      <Searchbarmenu/>
+
+      <ButtonExampleAnimated />
+
+      {/* <div className='mt-3 mr-10 mb-3 ml-auto '>
         <button className='p-1 px-8 rounded-md bg-cyan-500 mr-3.5' >Log in</button>
         <button className='p-1 px-8 rounded-md bg-neutral-800 text-white'>Register</button>
       </div>
+       */}
     </nav>
   )
 }

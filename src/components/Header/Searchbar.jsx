@@ -1,12 +1,23 @@
 import React from 'react'
-import {FiSearch} from 'react-icons/fi'
+import { Dropdown, Input } from 'semantic-ui-react'
 
+const options = [
+  { key: 'name', text: 'Game Name', value: 'name' },
+  { key: 'genre', text: 'Genre', value: 'genre' },
+  { key: 'site', text: 'Entire Site', value: 'site' },
+]
 
-export default function Searchbar() {
+export default function Searchbarmenu() {
   return (
-    <div className='flex relative '>
-        <input className='w-96 rounded-md my-3 p-1' type="text" placeholder='Search your game here' />
-        <figure><h3 className='absolute'><FiSearch/></h3></figure>
-    </div>
+    <Input
+    action={
+      <Dropdown button basic floating options={options} defaultValue='name' />
+    }
+    className='my-3 ml-5 w-136  bg-white'
+    icon='search'
+    iconPosition='left'
+    placeholder='Search your game...'
+    
+  />
   )
 }
