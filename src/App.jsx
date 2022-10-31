@@ -1,13 +1,15 @@
-import Navbar from "./components/Header/Navbar"
-import Slider from "./components/Slider"
-import Main from "./components/Body/Main"
+import {Route, Routes} from 'react-router-dom'
+import Home from './components/Home'
+import Navbar from './components/Header/Navbar'
+import GamePage from './components/GamePage'
 function App() {
-  
   return (
     <div className="App bg-not-white">
       <Navbar/>
-      <Slider/>
-      <Main />
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/game-page' element={<GamePage/>}/>
+      </Routes>
     </div>
   )
 }
