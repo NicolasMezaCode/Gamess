@@ -3,9 +3,9 @@ import MostRated from './MostRated'
 import Title from './Title'
 export default function Main() {
   return (
-    <body>
+    <main>
       <Title/>
       <MostRated/>
-    </body>
+    </main>
   )
 }
