@@ -9,7 +9,7 @@ export default function Navbar() {
 
       <div className='w-48 inline-flex gap-3 my-auto mx-3'>
         <div>
-          <img classname='' src={logo} alt="Website Logo" />
+          <img className='' src={logo} alt="Website Logo" />
         </div>
         <div>
           <h2 className='text-4xl'>Gamess</h2>
