@@ -1,6 +1,6 @@
 import React from 'react'
 import Searchbar from './Searchbar'
-import logo from '../../../public/game-icons_game-console.svg'
+import logo from '../../assets/game-icons_game-console.svg'
 
 
 export default function Navbar() {
