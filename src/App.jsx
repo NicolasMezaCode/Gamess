@@ -1,6 +1,6 @@
 import Navbar from "./components/Header/Navbar"
 import Slider from "./components/Slider"
-import Main from "./components/Main/Main"
+import Main from "./components/Main"
 function App() {
   
   return (
