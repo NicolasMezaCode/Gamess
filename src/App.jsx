@@ -1,17 +1,19 @@
 import 'semantic-ui-css/semantic.min.css'
+import {Route, Routes} from 'react-router-dom'
 import Navbar from "./components/Header/Navbar"
 import Footer from './components/Footer/Footer'
-import Slider from "./components/Slider.jsx"
-import Main from "./components/Main/Main.jsx"
+import Home from './components/Home'
+import GamePage from './components/GamePage'
 
 
 function App() {
-  
   return (
     <div className="App bg-not-white">
       <Navbar/>
-      <Slider/>
-      <Main />
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/game-page' element={<GamePage/>}/>
+      </Routes>
       <Footer />
     </div>
   )
