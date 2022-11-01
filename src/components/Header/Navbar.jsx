@@ -1,6 +1,5 @@
 import React from 'react'
 import Searchbarmenu from './Searchbar'
-import ButtonExampleAnimated from './Buttons'
 import logo from '../../../public/game-icons_game-console.svg'
 
 
@@ -19,7 +18,6 @@ export default function Navbar() {
       
       <Searchbarmenu/>
 
-      <ButtonExampleAnimated />
 
       <div className='mt-3 mr-10 mb-3 ml-auto '>
         <button className='py-2 px-8 rounded-md bg-gray-100 mr-3.5 hover:rounded-xl hover:bg-cyan-400 transition-all duration-300 ease-linear cursor-pointer' >Log in</button>
