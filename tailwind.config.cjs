@@ -21,7 +21,8 @@ module.exports = {
       },
       colors:{
         'eastern-blue':'#008294',
-        'not-white':'#E5E5E5'
+        'not-white':'#E5E5E5',
+        'darker-grey':'#C6C6C6'
       },
       boxShadow:{
         '3xl': '0 6px 6px  rgba(0, 0, 0, 0.35)'
@@ -36,6 +37,9 @@ module.exports = {
         '128': '32rem',
         '136': '40rem',
       },
+      width:{
+        '600':'37.5rem'
+      }
     },
   },
   plugins: [],
