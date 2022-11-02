@@ -7,12 +7,12 @@ export default function Popular() {
         <h3 className='font-poppins font-medium text-white text-5xl'>Popular Games</h3>
       </div>
       <div className='grid gap-16 grid-cols-2 grid-rows-3 mt-16  '>
-        <div className='bg-darker-grey h-96 w-600 rounded-lg'></div>
-        <div className='bg-darker-grey  h-96 w-600 rounded-lg'></div>
-        <div className='bg-darker-grey  h-96 w-600 rounded-lg'></div>
-        <div className='bg-darker-grey  h-96 w-600 rounded-lg'></div>
-        <div className='bg-darker-grey  h-96 w-600 rounded-lg'></div>
-        <div className='bg-darker-grey  h-96 w-600 rounded-lg'></div>
+        <div className='bg-darker-grey h-96 w-600 rounded-lg drop-shadow-lg'></div>
+        <div className='bg-darker-grey  h-96 w-600 rounded-lg drop-shadow-lg'></div>
+        <div className='bg-darker-grey  h-96 w-600 rounded-lg drop-shadow-lg'></div>
+        <div className='bg-darker-grey  h-96 w-600 rounded-lg drop-shadow-lg'></div>
+        <div className='bg-darker-grey  h-96 w-600 rounded-lg drop-shadow-lg'></div>
+        <div className='bg-darker-grey  h-96 w-600 rounded-lg drop-shadow-lg'></div>
       </div>
     </div>
   )
