@@ -1,12 +1,15 @@
 import React from 'react'
-import Navbar from './Header/Navbar'
 import Slider from './Slider'
-import Main from './Body/Main'
+import MostRated from './MostRated'
+import Popular from './Popular'
+import Title from './Title'
 export default function Home() {
   return (
     <>
       <Slider/>
-      <Main/>
+      <Title/>
+      <MostRated/>
+      <Popular/>
     </>
   )
 }
