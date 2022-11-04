@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import readDead from '../assets/read-dead.png'
-import elden from '../assets/elden.webp'
-import spider from '../assets/spiderman.jpg'
+import readDead from '../../assets/read-dead.png'
+import elden from '../../assets/elden.webp'
+import spider from '../../assets/spiderman.jpg'
 import { useEffect } from 'react'
 export default function Slider() {
     const [counter,setCounter]=useState(0)
-    const images=[elden,readDead,spider]
+    const images=[spider,elden,readDead]
     const changeImage=()=>{
         if(counter<images.length-1){
             setCounter(prev=>prev+1)

@@ -2,8 +2,8 @@ import 'semantic-ui-css/semantic.min.css'
 import {Route, Routes} from 'react-router-dom'
 import Navbar from "./components/shared/Navbar"
 import Footer from './components/shared/Footer'
-import Home from './components/Home'
-import GamePage from './components/GamePage'
+import Home from './components/Home/Home'
+import GamePage from './components/GamePage/GamePage'
 
 
 function App() {
