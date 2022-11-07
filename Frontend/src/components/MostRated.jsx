@@ -1,6 +1,11 @@
 import React from 'react'
+import { useEffect } from 'react'
+import { getMostRated } from '../api/getMostRated'
 
 export default function MostRated() {
+  useEffect(()=>{
+    getMostRated()
+  },[])
   return (
     <div className='flex flex-col justify-center items-center'>
       <div className='flex justify-center items-center p-4 bg-zinc-900 rounded-lg'>
