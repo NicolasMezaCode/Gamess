@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="text-not-white bg-zinc-800 mx-auto w-full max-w-container px-1 sm:px-6 lg:px-8 ">
+    <footer className="text-not-white bg-zinc-800 mx-auto w-full max-w-container px-1 sm:px-6 lg:px-8">
       <div className="border-t border-slate-900/5 py-10">
         <p className="mt-5 text-center text-sm leading-6">
           Designed by: Nicolas Meza and Gabriel Soares
