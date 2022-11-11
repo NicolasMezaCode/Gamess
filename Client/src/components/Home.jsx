@@ -1,0 +1,15 @@
+import React from 'react'
+import Slider from './Slider'
+import MostRated from './MostRated'
+import Popular from './Popular'
+import Title from './Title'
+export default function Home() {
+  return (
+    <>
+      <Slider/>
+      <Title/>
+      <MostRated/>
+      <Popular/>
+    </>
+  )
+}
