@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { getMostRated } from '../api/getMostRated'
+import { getMostRated } from '../../api/getMostRated'
 
 export default function MostRated() {
   const [mostRated,setMostrated]=useState([])
