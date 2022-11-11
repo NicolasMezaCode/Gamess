@@ -4,7 +4,7 @@ import elden from '../../assets/elden.webp'
 import spider from '../../assets/spiderman.jpg'
 import { useEffect } from 'react'
 export default function Slider() {
-    const [counter,setCounter]=useState(0)
+    const [counter,setCounter]=useState(1)
     const images=[spider,elden,readDead]
     const changeImage=()=>{
         if(counter<images.length-1){
