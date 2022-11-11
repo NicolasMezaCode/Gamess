@@ -1,11 +1,18 @@
 import React from 'react'
+import { useState } from 'react'
 import { useEffect } from 'react'
 import { getMostRated } from '../api/getMostRated'
 
 export default function MostRated() {
+  const [mostRated,setMostrated]=useState([])
+
   useEffect(()=>{
-    getMostRated()
+    const ratedGames=Promise.resolve(getMostRated())
+    ratedGames.then(data=>{
+      setMostrated(data)
+    })
   },[])
+  console.log(mostRated)
   return (
     <div className='flex flex-col justify-center items-center'>
       <div className='flex justify-center items-center p-4 bg-zinc-900 rounded-lg'>
