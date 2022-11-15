@@ -5,7 +5,6 @@ import { getMostRated } from '../../api/getMostRated'
 import RatedGame from './RatedGame'
 export default function MostRated() {
   const [mostRated,setMostrated]=useState([])
-
   useEffect(()=>{
     const ratedGames=Promise.resolve(getMostRated())
     ratedGames.then(data=>{
@@ -13,7 +12,6 @@ export default function MostRated() {
     })
   },[])
   console.log(mostRated)
-
   return (
     <div className='flex flex-col justify-center items-center'>
       <div className='flex justify-center items-center p-4 bg-zinc-900 rounded-lg'>

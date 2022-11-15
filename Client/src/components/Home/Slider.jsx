@@ -16,7 +16,7 @@ export default function Slider() {
     //         const interval=setInterval(()=>{
     //             changeImage()
     //             console.log(counter)
-    //         },2000)
+    //         },5000)
     //         return ()=>clearInterval(interval)
     // },[counter])
 
