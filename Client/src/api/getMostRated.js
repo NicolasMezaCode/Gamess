@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const getMostRated =async()=>{
     try{
-        const res=await axios.get(import.meta.env.VITE_API);
+        const res=await axios.get(import.meta.env.VITE_API_MOST);
         const mostrated=await res.data
         console.log(mostrated)
         const shuffled=mostrated.sort(()=>0.5-Math.random())

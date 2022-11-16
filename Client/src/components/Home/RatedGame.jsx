@@ -5,7 +5,7 @@ const image=`https://images.igdb.com/igdb/image/upload/t_cover_big/${cover.image
 const stars=Math.round(rating)*5/100
 const formatedRating=stars.toFixed(1)
   return (
-    <div>
+    <div className='mt-3'>
       <figure className='ml-9 mr-9'><img className='' src={image} alt="cover of the games" /></figure>
       <span className='flex  items-center justify-center mt-2'>
         <h4 className='text-white font-poppins mr-1 text-3xl'>{formatedRating}</h4>

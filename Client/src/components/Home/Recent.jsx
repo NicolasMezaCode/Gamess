@@ -1,6 +1,15 @@
 import React from 'react'
+import { useState,useEffect } from 'react'
+import { getRecent } from '../../api/getRecent'
 
 export default function Recent() {
+  const [recent,setRecent]=useState([])
+  useEffect(()=>{
+    const recentGames=Promise.resolve(getRecent())
+    recentGames.then(data=>{
+      setRecent(data)
+    })
+  },[])
   return (
     <div className='flex flex-col justify-center items-center pb-16'>
       <div className='flex justify-center items-center p-4  bg-zinc-900 rounded-lg'>
