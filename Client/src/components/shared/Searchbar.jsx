@@ -13,7 +13,7 @@ export default function Searchbarmenu() {
     action={
       <Dropdown button basic floating options={options} defaultValue='name' />
     }
-    className='my-3  w-136  bg-white'
+    className='my-3  w-136  bg-white z-40'
     icon='search'
     iconPosition='left'
     placeholder='Search your game...'

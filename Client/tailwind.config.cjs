@@ -41,7 +41,10 @@ module.exports = {
       },
       width:{
         '600':'37.5rem'
-      }
+      },
+      maxWidth:{
+        '85':'85%'
+      },
     },
   },
   plugins: [],
