@@ -53,22 +53,22 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
   };
 
   return (
-    <div className="mx-72">
-      <h2 className="text-center">Image Carousel</h2>
+    <div className="mx-96 mt-24">
+      <h2 className=""></h2>
       <div
-        className="selected-image"
+        className="w-full h-140 mb-5 bg-center bg-no-repeat bg-cover rounded-xl"
         style={{ backgroundImage: `url(${selectedImage?.url})` }}
       />
-      <div className="carousel">
-        <div className="carousel__images">
+      <div className="relative">
+        <div className="flex max-w-full overflow-x-hidden">
           {images &&
             images.map((image, idx) => (
               <div
                 onClick={() => handleSelectedImageChange(idx)}
                 style={{ backgroundImage: `url(${image.url})` }}
                 key={image.id}
-                className={`carousel__image ${
-                  selectedImageIndex === idx && "carousel__image-selected"
+                className={`carousel__image mr-3 h-40 w-52 min-w-52 border-2 border-solid border-black bg-center bg-no-repeat bg-cover rounded-xl ${
+                  selectedImageIndex === idx && "border-3 border-solid border-cyan-500 rounded-lg"
                 }`}
                 ref={(el) => (carouselItemsRef.current[idx] = el)}
               />

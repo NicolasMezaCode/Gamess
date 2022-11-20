@@ -13,7 +13,7 @@ export default function Game() {
   
   useEffect(() => {
     setImages(
-      Array.from(Array(10).keys()).map((id) => ({
+      Array.from(Array(7).keys()).map((id) => ({
         id,
         url: `https://picsum.photos/1000?random=${id}`
       }))
