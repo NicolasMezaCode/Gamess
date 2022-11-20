@@ -53,10 +53,10 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
   };
 
   return (
-    <div className="mx-96 mt-24">
+    <div className="mx-96 mt-24 mb-24">
       <h2 className=""></h2>
       <div
-        className="w-full h-140 mb-5 bg-center bg-no-repeat bg-cover rounded-xl"
+        className="w-full h-140 mb-5 bg-center bg-no-repeat bg-cover rounded-xl shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear"
         style={{ backgroundImage: `url(${selectedImage?.url})` }}
       />
       <div className="relative">
@@ -67,14 +67,14 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
                 onClick={() => handleSelectedImageChange(idx)}
                 style={{ backgroundImage: `url(${image.url})` }}
                 key={image.id}
-                className={`carousel__image mr-3 h-40 w-52 min-w-52 border-2 border-solid border-black bg-center bg-no-repeat bg-cover rounded-xl ${
-                  selectedImageIndex === idx && "border-3 border-solid border-cyan-500 rounded-lg"
+                className={` mr-3 h-40 w-52 min-w-52 border-2 border-solid border-gray-400 bg-center bg-no-repeat bg-cover rounded-lg shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear ${
+                  selectedImageIndex === idx && "border-3 border-solid border-gray-800 "
                 }`}
                 ref={(el) => (carouselItemsRef.current[idx] = el)}
               />
             ))}
         </div>
-        <button
+        {/* <button
           className="carousel__button carousel__button-left"
           onClick={handleLeftClick}
         >
@@ -85,7 +85,7 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
           onClick={handleRightClick}
         >
           Next
-        </button>
+        </button> */}
       </div>
     </div>
   );
