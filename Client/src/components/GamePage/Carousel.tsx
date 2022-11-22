@@ -74,7 +74,7 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
               />
             ))}
         </div>
-        {/* <button
+        <button
           className="carousel__button carousel__button-left"
           onClick={handleLeftClick}
         >
@@ -85,7 +85,7 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
           onClick={handleRightClick}
         >
           Next
-        </button> */}
+        </button>
       </div>
     </div>
   );
