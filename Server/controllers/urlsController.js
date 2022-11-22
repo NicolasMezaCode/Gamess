@@ -29,7 +29,7 @@ const showRecent=async(req,res)=>{
             "Client-ID":process.env.CLIENT_ID,
             Authorization: `Bearer ${process.env.AUTHORIZATION}`,
         },
-        data:"fields cover.*,name,genres.*,platforms.*,aggregated_rating,first_release_date,total_rating_count; where cover!=null & aggregated_rating!=null & name!=null; where first_release_date > 1641024000 & first_release_date<1672531199; limit:30;"
+        data:"fields cover.*,name,aggregated_rating,first_release_date,genres.*,platforms.*;where cover!=null & total_rating_count!=null & genres!=null & name!=null & aggregated_rating!=null & first_release_date > 1641024000;limit:30;"
     })
     .then((response)=>{
         res.json(response.data)
