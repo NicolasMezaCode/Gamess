@@ -12,13 +12,13 @@ export default function Slider() {
         }
         else{setCounter(prev=>prev=0)}
     }
-    useEffect(()=>{
-            const interval=setInterval(()=>{
-                changeImage()
-                console.log(counter)
-            },5000)
-            return ()=>clearInterval(interval)
-    },[counter])
+    // useEffect(()=>{
+    //         const interval=setInterval(()=>{
+    //             changeImage()
+    //             console.log(counter)
+    //         },5000)
+    //         return ()=>clearInterval(interval)
+    // },[counter])
 
   return (
     <div className=''>
