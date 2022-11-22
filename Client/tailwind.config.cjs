@@ -22,7 +22,9 @@ module.exports = {
       colors:{
         'eastern-blue':'#008294',
         'not-white':'#E5E5E5',
-        'darker-grey':'#C6C6C6'
+        'darker-grey':'#C6C6C6',
+        'light-grey':'#D9D9D9',
+        'medium-grey': '#484848'
       },
       boxShadow:{
         '3xl': '0 6px 6px  rgba(0, 0, 0, 0.35)'
