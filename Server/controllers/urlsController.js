@@ -38,8 +38,12 @@ const showRecent=async(req,res)=>{
         console.log(err)
     })
 }
+const showGame=(req,res)=>{
+    console.log('jolii')
+}
 
 module.exports={
     showMostRated,
-    showRecent
+    showRecent,
+    showGame,
 }

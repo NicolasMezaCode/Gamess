@@ -12,7 +12,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/game-page' element={<GamePage/>}/>
+        <Route path='/game-page/:id' element={<GamePage/>}/>
       </Routes>
       <Footer />
     </div>
