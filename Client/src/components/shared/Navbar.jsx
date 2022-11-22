@@ -6,7 +6,7 @@ import logo from '../../assets/game-icons_game-console.svg'
 export default function Navbar() {
   return (
     <nav className='flex p-1 bg-gray-300'>
-
+      <a href="/" className='flex justify-center items-center'>
       <div className='w-48 inline-flex my-auto mx-3'>
         <figure>
           <img className='' src={logo} alt="Website Logo" />
@@ -15,6 +15,7 @@ export default function Navbar() {
           <h2 className='text-4xl font-poppins'>Gamess</h2>
         </div>
       </div>
+      </a>
       <Searchbarmenu/>
 
       <div className='mt-3 mr-10 mb-3 ml-auto '>
