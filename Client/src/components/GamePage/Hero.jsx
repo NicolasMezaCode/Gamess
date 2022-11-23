@@ -1,9 +1,19 @@
-import React from 'react'
+import { React, useState, useEffect } from 'react'
 import GoW from '../../assets/God_of_War_II_cover.jpg'
+import { getCover } from '../../api/getCover';
 
-export default function GameHeader() {
+export default function GameHeader({cover, id, genres, plataforms, involved_companies}) {
+    
+    const [gameCover,setgameCover]=useState([])
+    useEffect(()=>{
+      const coverGames=Promise.resolve(getCover())
+      coverGames.then(data=>{
+        setgameCover(data)
+      })
+    },[])
+    console.log(gameCover)
 
-    const background = [GoW];
+    const background = [cover];
 
 
     return (
@@ -24,6 +34,7 @@ export default function GameHeader() {
                         <div className='grid grid-cols-3 min-h-full px-12 text-2xl '>
                             <div className=''>
                                 <ul className=''>
+                                    
                                     <li className='py-10'>Genre: </li>
                                     <li className='py-10'>Platforms: </li>
                                     <li className='py-10'>Developer: </li>
@@ -32,10 +43,9 @@ export default function GameHeader() {
                             </div>
                             <div className='col-span-2'>
                                 <ul className=''>
-                                    <li className='py-10'>Third-Person, Action, Adventure</li>
-                                    <li className='py-10'>PlayStation 2, PlayStation 3, PlayStation Vita </li>
-                                    <li className='py-10'>SCE Studios Santa Monica </li>
-                                    <li className='py-10'>Sony Computer Entertainment </li>
+                                    <li className='py-10'>{gameCover.genres}</li>
+                                    <li className='py-10'>{gameCover.plataforms} </li>
+                                    <li className='py-10'>{gameCover.involved_companies} </li>
                                 </ul>
                             </div>
                         </div>
