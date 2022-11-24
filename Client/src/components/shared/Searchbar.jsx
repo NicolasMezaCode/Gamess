@@ -1,23 +1,27 @@
 import React from 'react'
-import { Dropdown, Input } from 'semantic-ui-react'
-
-const options = [
-  { key: 'name', text: 'Game Name', value: 'name' },
-  { key: 'genre', text: 'Genre', value: 'genre' },
-  { key: 'site', text: 'Entire Site', value: 'site' },
-]
-
+import {Input } from 'semantic-ui-react'
+import {useNavigate} from 'react-router-dom'
+import { useState } from 'react'
 export default function Searchbarmenu() {
+  const [name,setName]=useState("")
+  const navigate=useNavigate()
+  const handleChange=(e)=>{
+    setName(e.target.value)
+  }
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    setName()
+    navigate(`/search/${name}`)
+  }
   return (
-    <Input
-    action={
-      <Dropdown button basic floating options={options} defaultValue='name' />
-    }
-    className='my-3  w-136  bg-white z-40'
-    icon='search'
-    iconPosition='left'
-    placeholder='Search your game...'
-    
-  />
+    <form onSubmit={handleSubmit}>
+      <Input
+      className='my-3  w-136  bg-white z-40 rounded-lg'
+      icon='search'
+      iconPosition='left'
+      placeholder='Search your game...'
+      onChange={handleChange}
+      />
+    </form>
   )
 }
