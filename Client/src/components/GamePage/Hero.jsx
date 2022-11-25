@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react'
 import GoW from '../../assets/God_of_War_II_cover.jpg'
 import { getCover } from '../../api/getCover';
 
-export default function GameHeader({cover, id, genres, plataforms, involved_companies}) {
+export default function Hero({cover, id, genres, plataforms, involved_companies}) {
     
     const [gameCover,setgameCover]=useState([])
     useEffect(()=>{

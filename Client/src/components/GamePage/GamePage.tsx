@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ImageCarousel, { ImageType } from './Carousel'
 import Description from './Description'
-import GameHeader from './Hero'
+import Hero from './Hero'
 import Information from './Information'
 import Sellers from './Sellers'
-import "./caroulsel.css";
 import { useParams } from "react-router-dom";
 
 
@@ -28,7 +27,7 @@ console.log(params.id)
   
   return (
     <div className=''>
-      <GameHeader />
+      <Hero />
       <Description />
       <Information />
       <Sellers />
