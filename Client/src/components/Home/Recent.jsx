@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
-import { getRecent } from '../../api/getRecent'
+import { getRecent } from '../../helpers/getRecent'
 import RecentCard from './RecentCard'
 
 export default function Recent() {

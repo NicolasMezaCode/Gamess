@@ -4,6 +4,7 @@ import Navbar from "./components/shared/Navbar"
 import Footer from './components/shared/Footer'
 import Home from './components/Home/Home'
 import GamePage from './components/GamePage/GamePage'
+import SearchPage from './components/Search/SearchPage'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/game-page/:id' element={<GamePage/>}/>
+        <Route path='/search/:name' element={<SearchPage/>}/>
       </Routes>
       <Footer />
     </div>
