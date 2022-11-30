@@ -6,7 +6,7 @@ export const getRecent=async()=>{
         const mostrecent=await res.data
         console.log(mostrecent)
         const shuffled=mostrecent.sort(()=>0.5-Math.random())
-        const getrecent=shuffled.slice(0,6)
+        const getrecent=shuffled.slice(0,8)
         return getrecent
     }
     catch(err){console.log(err)}

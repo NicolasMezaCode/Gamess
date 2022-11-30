@@ -9,8 +9,6 @@ export default function Searchbarmenu() {
     setName(e.target.value)
   }
   const handleSubmit=(e)=>{
-    e.preventDefault()
-    setName()
     navigate(`/search/${name}`)
   }
   return (
