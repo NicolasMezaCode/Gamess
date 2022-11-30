@@ -75,13 +75,13 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
             ))}
         </div>
         <button
-          className="carousel__button carousel__button-left"
+          className="absolute top-1/3 left-1"
           onClick={handleLeftClick}
         >
           Prev
         </button>
         <button
-          className="carousel__button carousel__button-right"
+          className="absolute top-1/3 right-1"
           onClick={handleRightClick}
         >
           Next

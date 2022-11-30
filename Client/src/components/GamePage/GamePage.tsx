@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
 import ImageCarousel, { ImageType } from './Carousel'
 import Description from './Description'
-import GameHeader from './Hero'
+import Hero from './Hero'
 import Information from './Information'
 import Sellers from './Sellers'
-import "./caroulsel.css";
 import { useParams } from "react-router-dom";
 
 
 export default function Game() {
   // How to get the id from the parameters
-const params=useParams()
-console.log(params.id)
+
 
 
   const [images, setImages] = useState<ImageType[]>();
@@ -28,7 +26,7 @@ console.log(params.id)
   
   return (
     <div className=''>
-      <GameHeader />
+      <Hero />
       <Description />
       <Information />
       <Sellers />
