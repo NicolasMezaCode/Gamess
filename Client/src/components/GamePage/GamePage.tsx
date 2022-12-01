@@ -1,18 +1,17 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
-import ImageCarousel, { ImageType } from './Carousel'
 import Description from './Description'
 import Hero from './Hero'
 import Information from './Information'
 import Sellers from './Sellers'
 import { useParams } from "react-router-dom";
 import {getGamePage} from "../../helpers/getGamePage"
+import Gallery from "./Carousel";
 
 export default function Game() {
   // How to get the id from the parameters
   const params=useParams()
   const id=params.id
-  const [images, setImages] = useState<ImageType[]>();
   const [gameData,setGameData]=useState()
   
   useEffect(() => {
@@ -29,7 +28,7 @@ export default function Game() {
       {gameData?<Description summary={gameData.summary} />:null}
       <Information />
       <Sellers />
-      <ImageCarousel/>
+      <Gallery/>
     </div>
   )
 }
