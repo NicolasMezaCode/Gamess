@@ -32,13 +32,16 @@ export default function Game() {
   },[gameData])
 
   return (
-    <div className=''>
+    <div className='py-1 flex flex-col'>
       {gameData?<Hero name={gameData.name} cover={gameData.cover} genres={gameData.genres} platforms={gameData.platforms} rating={gameData.aggregated_rating} engine={gameData.game_engines}  />:null
       }
       {gameData?<Description summary={gameData.summary} />:null}
       <Information />
-      <Sellers />
-      <Gallery/>
+      {gameData?<Sellers summary={gameData.summary} />:null}
+      {/* <SeSellersllers /> */}
+
+      {gameData?<Gallery cover={gameData.cover} />:null}
+
     </div>
   )
 }

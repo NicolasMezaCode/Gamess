@@ -5,7 +5,7 @@ import logo from '../../assets/game-icons_game-console.svg'
 
 export default function Navbar() {
   return (
-    <nav className='flex p-1 bg-gray-300'>
+    <nav className='flex p-3 bg-gray-300'>
       <a href="/" className='flex justify-center items-center'>
       <div className='w-48 inline-flex my-auto mx-3'>
         <figure>

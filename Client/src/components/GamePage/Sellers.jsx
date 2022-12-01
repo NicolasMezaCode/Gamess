@@ -1,13 +1,13 @@
 import React from 'react'
 
-export default function Sellers() {
+export default function Sellers({summary}) {
 
     return (
-        <div className='h-52 text-4xl mt-12'>
-            <div className='h-36 max-w-screen-xl mx-auto rounded-md bg-light-grey shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear'>
-                <div className=''>
-                    <div className=''>
-                        <h2>Where you can buy</h2>
+        <div className='max-h-fit text-4xl'>
+            <div className='my-12'>
+                <div className='min-h-48 max-h-fit max-w-screen-xl mx-auto rounded-md bg-light-grey shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear'>
+                    <div className='p-12'>
+                        <h2>{summary}</h2>
 
                     </div>
                 </div>

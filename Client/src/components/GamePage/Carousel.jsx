@@ -1,34 +1,100 @@
-import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import React, { useCallback, useRef, useState } from "react";
+import {
+  MDBCarousel,
+  MDBCarouselInner,
+  MDBCarouselItem,
+  MDBCarouselElement,
+  MDBContainer,
+} from "mdb-react-ui-kit";
 
-export default function Gallery(cover) {
-  const imageSmall=`//images.igdb.com/igdb/image/upload/t_thumb/${cover.image_id}.jpg`
+export default function Gallery() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const carouselInner = useRef(null);
+
+  const slideChanged = useCallback(() => {
+    const activeItem = carouselInner.current.querySelector(".active");
+    setCurrentSlide(
+      Array.from(carouselInner.current.children).indexOf(activeItem)
+    );
+  }, []);
+
+  const changeSlide = useCallback((position) => {
+    Array.from(carouselInner.current.children).forEach((el, i) => {
+      if (i !== position) {
+        el.classList.remove("active");
+      } else {
+        el.classList.add("active");
+        slideChanged();
+      }
+    });
+  }, []);
+
   return (
-    <div>
-      <Carousel autoPlay interval="8000" transitionTime="5000" infiniteLoop>
-        <div className="h-72">
-          <img src={imageSmall} alt="" />
-          <p className="legend">My Photo 1</p>
+    <MDBContainer className="mt-5">
+      <MDBCarousel
+        id="carouselExampleIndicators"
+        showControls
+        fade
+        onSlide={slideChanged}
+      >
+        <MDBCarouselInner ref={carouselInner} className="rounded-3 shadow-1-strong">
+          <MDBCarouselItem className="active">
+            <MDBCarouselElement
+              src="https://mdbootstrap.com/img/Photos/Slides/img%20(88).webp"
+              alt="..."
+            />
+          </MDBCarouselItem>
+
+          <MDBCarouselItem>
+            <MDBCarouselElement
+              src="https://mdbootstrap.com/img/Photos/Slides/img%20(121).webp"
+              alt="..."
+            />
+          </MDBCarouselItem>
+
+          <MDBCarouselItem>
+            <MDBCarouselElement
+              src="https://mdbootstrap.com/img/Photos/Slides/img%20(31).webp"
+              alt="..."
+            />
+          </MDBCarouselItem>
+        </MDBCarouselInner>
+
+        <div className="carousel-indicators" style={{ marginBottom: "-20px" }}>
+          <button
+            className={`carousel-indicator ${currentSlide === 0 ? "active" : ""}`}
+            onClick={() => changeSlide(0)}
+            style={{ width: "100px" }}
+          >
+            <img
+              className="d-block w-100 img-fluid shadow-1-strong rounded"
+              src="https://mdbootstrap.com/img/Photos/Slides/img%20(88).webp"
+            />
+          </button>
+          <button
+            className={`carousel-indicator ${currentSlide === 1 ? "active" : ""}`}
+            onClick={() => changeSlide(1)}
+            style={{ width: "100px" }}
+          >
+            <img
+              className="d-block w-100 img-fluid shadow-1-strong rounded"
+              src="https://mdbootstrap.com/img/Photos/Slides/img%20(121).webp"
+            />
+          </button>
+          <button
+            className={`carousel-indicator ${currentSlide === 2 ? "active" : ""}`}
+            onClick={() => changeSlide(2)}
+            style={{ width: "100px" }}
+          >
+            <img
+              className="d-block w-100 img-fluid shadow-1-strong rounded"
+              src="https://mdbootstrap.com/img/Photos/Slides/img%20(31).webp"
+            />
+          </button>
         </div>
-        <div>
-          <img src={imageSmall} alt="" />
-          <p className="legend">My Photo 2</p>
-        </div>
-        <div>
-          <img src={imageSmall} alt="" />
-          <p className="legend">My Photo 3</p>
-        </div>
-        <div>
-          <img src={imageSmall} alt="" />
-          <p className="legend">My Photo 4</p>
-        </div>
-        <div>
-          <img src={imageSmall} alt="" />
-          <p className="legend">My Photo 5</p>
-        </div>
-      </Carousel>
-    </div>
-  )
+      </MDBCarousel>
+    </MDBContainer>
+  );
 }
 
