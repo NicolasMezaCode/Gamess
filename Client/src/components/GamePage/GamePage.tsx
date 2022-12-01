@@ -20,7 +20,17 @@ export default function Game() {
       setGameData(data[0])
     })
   }, []);
-  
+  useEffect(()=>{
+    let imageUrls=[]
+    if(gameData!=undefined){ 
+      gameData.screenshots.map((screenshot)=>{
+        const id=screenshot.image_id
+        imageUrls.push(`https://images.igdb.com/igdb/image/upload/t_1080p/${id}.jpg`)
+      })
+    }
+    console.log(imageUrls)
+  },[gameData])
+
   return (
     <div className=''>
       {gameData?<Hero name={gameData.name} cover={gameData.cover} genres={gameData.genres} platforms={gameData.platforms} rating={gameData.aggregated_rating} engine={gameData.game_engines}  />:null
