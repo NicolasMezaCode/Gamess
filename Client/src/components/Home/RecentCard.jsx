@@ -9,13 +9,13 @@ export default function RecentCard({cover,id,name,platforms,genres,rating}) {
   return (
     <div className='bg-darker-grey h-96 w-600 rounded-lg drop-shadow-lg flex justify-around'>
       <figure className='ml-9 mr-9 flex items-center'>
-        <Link to={`/game-page/${id}`}>
+        <Link to={`/game/${id}`}>
           <img className='h-auto w-56' src={image} alt="cover of the games" />
         </Link>
       </figure>
       <section className='flex justify-center flex-col items-center ml-9 mr-9 max-w-[12.5rem]'>
       <span className='flex justify-center w-fit'>
-      <Link to={`/game-page/${id}`}>
+      <Link to={`/game/${id}`}>
         {<h3 className='text-2xl font-bold text-center underline underline-offset-4 decoration-1 min-w-[11rem]'>{name}</h3>}
       </Link>
       </span>

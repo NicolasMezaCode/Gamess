@@ -7,7 +7,7 @@ const stars=Math.round(rating)*5/100
 const formatedRating=stars.toFixed(1)
   return (
     <div className='mt-3'>
-      <Link to={`/game-page/${id}`}>
+      <Link to={`/game/${id}`}>
         <figure className='ml-9 mr-9'><img className='' src={image} alt="cover of the games" />
           <span className='flex  items-center justify-center mt-2'>
             <h4 className='text-white font-poppins mr-1 text-3xl'>{formatedRating}</h4>

@@ -13,7 +13,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/game-page/:id' element={<GamePage/>}/>
+        <Route path='/game/:id' element={<GamePage/>}/>
         <Route path='/search/:name' element={<SearchPage/>}/>
         <Route path='/search/' element={<SearchPage/>}/>
       </Routes>

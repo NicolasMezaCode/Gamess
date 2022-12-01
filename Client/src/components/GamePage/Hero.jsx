@@ -1,36 +1,36 @@
 import { React, useState, useEffect } from 'react'
 import { getCover } from '../../helpers/getCover'
 import { useParams } from "react-router-dom";
+import {AiFillStar} from 'react-icons/Ai'
 
-export default function Hero() {
-    
-    const query = new URLSearchParams(window.location.search)
-    const cover = query.get('cover');
-    console.log(params.cover)
-
-
-
-
+export default function Hero({cover,rating,name,genres,platforms,engine}) {
+    const imageSmall=`https://images.igdb.com/igdb/image/upload/t_cover_big/${cover.image_id}.jpg`
+    const image=`https://images.igdb.com/igdb/image/upload/t_1080p/${cover.image_id}.jpg`
+    const stars=Math.round(rating)*5/100
+    const formatedRating=stars.toFixed(1)
     return (
         <div className='flex w-fit relative'>
             <div className='h-140 w-screen'>
-                <figure style={{ backgroundImage: `url(${this.props.params.cover})` }} className='bg-no-repeat bg-cover bg-center blur-md min-h-full min-w-full bg-fixed'></figure>
+                <figure style={{ backgroundImage: `url(${image})` }} className='bg-no-repeat bg-cover bg-center blur-md min-h-full min-w-full bg-fixed'></figure>
             </div>
             <div className='absolute min-w-full pt-40' >
                 <div className='grid grid-cols-2'>
                     <div className='ml-80'>
-                        <img src={tthis.props.params.cover} alt="" className=' rounded-xl w-128 h-132 border-solid border-4 border-black shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear' />
+                        <img src={imageSmall} alt="" className=' rounded-xl w-128 h-132 border-solid border-4 border-black shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear' />
                     </div>
                     <div className='backdrop-blur-xl bg-white/80 w-140  rounded-xl shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear'>
                         <div className='text-center'>
-                            <h2 className='py-10 text-5xl'>Game Name Here</h2>
-                            <p className='py-3 text-4xl'>4.9</p>
+                            <h2 className='py-10 text-5xl'>{name}</h2>
+                            <span className='flex  items-center justify-center mt-3 mb-3'>
+                                <h4 className='font-poppins mr-1 text-xl'>{formatedRating}</h4>
+                                <AiFillStar className='text-amber-600 w-7 h-auto'/>
+                            </span>
                         </div>
                         <div className='grid grid-cols-3 min-h-full px-12 text-2xl '>
                             <div className=''>
                                 <ul className=''>
                                     
-                                    <li className='py-10'>Genre: {this.props.params.genres} </li>
+                                    <li className='py-10'>Genres: </li>
                                     <li className='py-10'>Platforms: </li>
                                     <li className='py-10'>Developer: </li>
                                     <li className='py-10'>Publisher: </li>
@@ -38,9 +38,9 @@ export default function Hero() {
                             </div>
                             <div className='col-span-2'>
                                 <ul className=''>
-                                    <li className='py-10'>{gameCover.genres}</li>
-                                    <li className='py-10'>{gameCover.plataforms} </li>
-                                    <li className='py-10'>{gameCover.involved_companies} </li>
+                                    {genres?genres.map((genre)=> <li className='ml-1 mr-1' key={genre.id}>{genre.name}</li>):null}
+                                    {platforms?platforms.map((platform)=><li key={platform.id} className='ml-1 mr-1 h-fit'>{platform.abbreviation}</li>):null}
+                                    {engine?engine.map((engine)=><li key={engine.id} className='ml-1 mr-1 h-fit'>{engine.name}</li>):null}
                                 </ul>
                             </div>
                         </div>

@@ -38,12 +38,29 @@ const showRecent=async(req,res)=>{
         console.log(err)
     })
 }
-const showGame=(req,res)=>{
-    console.log('jolii')
+const showGamePage=async(req,res)=>{
+    const id=req.params.id
+    console.log(id)
+    await axios({
+        url:"https://api.igdb.com/v4/games",
+        method:"POST",
+        headers:{
+            Accept: "application/json",
+            "Client-ID":process.env.CLIENT_ID,
+            Authorization: `Bearer ${process.env.AUTHORIZATION}`,
+        },
+        data:`fields name,screenshots.*,platforms.*,genres.*,aggregated_rating,summary,involved_companies.*,artworks.*,cover.*,game_engines.*;where id=${id};`
+    })
+    .then((response)=>{
+        res.json(response.data)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
 }
 
 module.exports={
     showMostRated,
     showRecent,
-    showGame,
+    showGamePage,
 }
