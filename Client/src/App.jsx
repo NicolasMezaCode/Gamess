@@ -9,7 +9,7 @@ import SearchPage from './components/shared/SearchPage'
 
 function App() {
   return (
-    <div className="App bg-not-white">
+    <div className="bg-not-white flex flex-col">
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>

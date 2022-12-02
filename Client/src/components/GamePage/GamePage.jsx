@@ -1,19 +1,18 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
-import ImageCarousel, { ImageType } from './Carousel'
 import Description from './Description'
 import Hero from './Hero'
 import Information from './Information'
 import Sellers from './Sellers'
+import Similar from "./Similar";
 import { useParams } from "react-router-dom";
 import {getGamePage} from "../../helpers/getGamePage"
-import { use } from "express/lib/router";
+import Gallery from "./Carousel";
 
 export default function Game() {
   // How to get the id from the parameters
   const params=useParams()
   const id=params.id
-  const [images, setImages] = useState<ImageType[]>();
   const [gameData,setGameData]=useState()
   
   useEffect(() => {
@@ -34,13 +33,17 @@ export default function Game() {
   },[gameData])
 
   return (
-    <div className=''>
+    <div className='py-1 flex flex-col gap-6'>
       {gameData?<Hero name={gameData.name} cover={gameData.cover} genres={gameData.genres} platforms={gameData.platforms} rating={gameData.aggregated_rating} engine={gameData.game_engines}  />:null
       }
       {gameData?<Description summary={gameData.summary} />:null}
       <Information />
-      <Sellers />
-      <ImageCarousel/>
+      {gameData?<Sellers summary={gameData.summary} />:null}
+      {/* <SeSellersllers /> */}
+      
+      {gameData?<Gallery cover={gameData.screenshot} />:null}
+      {gameData?<Similar name={gameData.name} cover={gameData.cover} similar={gameData.similar_games}  />:null
+      }
     </div>
   )
 }
