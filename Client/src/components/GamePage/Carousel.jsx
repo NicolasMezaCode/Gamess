@@ -1,100 +1,40 @@
-import React, { useCallback, useRef, useState } from "react";
-import {
-  MDBCarousel,
-  MDBCarouselInner,
-  MDBCarouselItem,
-  MDBCarouselElement,
-  MDBContainer,
-} from "mdb-react-ui-kit";
-
-export default function Gallery() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const carouselInner = useRef(null);
-
-  const slideChanged = useCallback(() => {
-    const activeItem = carouselInner.current.querySelector(".active");
-    setCurrentSlide(
-      Array.from(carouselInner.current.children).indexOf(activeItem)
-    );
-  }, []);
-
-  const changeSlide = useCallback((position) => {
-    Array.from(carouselInner.current.children).forEach((el, i) => {
-      if (i !== position) {
-        el.classList.remove("active");
-      } else {
-        el.classList.add("active");
-        slideChanged();
-      }
-    });
-  }, []);
+import React from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+export default function Gallery({screenshot}) {
 
   return (
-    <MDBContainer className="mt-5">
-      <MDBCarousel
-        id="carouselExampleIndicators"
-        showControls
-        fade
-        onSlide={slideChanged}
-      >
-        <MDBCarouselInner ref={carouselInner} className="rounded-3 shadow-1-strong">
-          <MDBCarouselItem className="active">
-            <MDBCarouselElement
-              src="https://mdbootstrap.com/img/Photos/Slides/img%20(88).webp"
-              alt="..."
-            />
-          </MDBCarouselItem>
-
-          <MDBCarouselItem>
-            <MDBCarouselElement
-              src="https://mdbootstrap.com/img/Photos/Slides/img%20(121).webp"
-              alt="..."
-            />
-          </MDBCarouselItem>
-
-          <MDBCarouselItem>
-            <MDBCarouselElement
-              src="https://mdbootstrap.com/img/Photos/Slides/img%20(31).webp"
-              alt="..."
-            />
-          </MDBCarouselItem>
-        </MDBCarouselInner>
-
-        <div className="carousel-indicators" style={{ marginBottom: "-20px" }}>
-          <button
-            className={`carousel-indicator ${currentSlide === 0 ? "active" : ""}`}
-            onClick={() => changeSlide(0)}
-            style={{ width: "100px" }}
-          >
-            <img
-              className="d-block w-100 img-fluid shadow-1-strong rounded"
-              src="https://mdbootstrap.com/img/Photos/Slides/img%20(88).webp"
-            />
-          </button>
-          <button
-            className={`carousel-indicator ${currentSlide === 1 ? "active" : ""}`}
-            onClick={() => changeSlide(1)}
-            style={{ width: "100px" }}
-          >
-            <img
-              className="d-block w-100 img-fluid shadow-1-strong rounded"
-              src="https://mdbootstrap.com/img/Photos/Slides/img%20(121).webp"
-            />
-          </button>
-          <button
-            className={`carousel-indicator ${currentSlide === 2 ? "active" : ""}`}
-            onClick={() => changeSlide(2)}
-            style={{ width: "100px" }}
-          >
-            <img
-              className="d-block w-100 img-fluid shadow-1-strong rounded"
-              src="https://mdbootstrap.com/img/Photos/Slides/img%20(31).webp"
-            />
-          </button>
-        </div>
-      </MDBCarousel>
-    </MDBContainer>
-  );
+    <Carousel autoPlay interval="800000" transitionTime="1000" infiniteLoop>
+    <div>
+        <img src={"https://images.igdb.com/igdb/image/upload/t_1080p/scfvki.jpg"} alt="" />
+    </div>
+    {/* <div>
+        <img src="https://images.igdb.com/igdb/image/upload/t_1080p/x7pzfljardlljvtqcgv4.jpg" alt="" />
+    </div> */}
+    <div>
+        <img src="https://images.igdb.com/igdb/image/upload/t_1080p/urqw7ltwmhr39gkidsih.jpg" alt="" />
+    </div>
+    <div>
+        <img src="https://images.igdb.com/igdb/image/upload/t_1080p/sciabe.jpg" alt="" />
+    </div>
+    <div>
+        <img src="https://images.igdb.com/igdb/image/upload/t_1080p/x5bbaqvgbpaz4hzlfeqb.jpg" alt="" />
+    </div>
+    <div>
+        <img src="https://images.igdb.com/igdb/image/upload/t_1080p/x5bbaqvgbpaz4hzlfeqb.jpg" alt="" />
+    </div>
+    <div>
+        <img src="https://images.igdb.com/igdb/image/upload/t_1080p/x5bbaqvgbpaz4hzlfeqb.jpg" alt="" />
+    </div>
+    <div>
+        <img src="https://images.igdb.com/igdb/image/upload/t_1080p/x5bbaqvgbpaz4hzlfeqb.jpg" alt="" />
+    </div>
+    <div>
+        <img src="https://images.igdb.com/igdb/image/upload/t_1080p/x5bbaqvgbpaz4hzlfeqb.jpg" alt="" />
+    </div>
+    <div>
+        <img src="https://images.igdb.com/igdb/image/upload/t_1080p/x5bbaqvgbpaz4hzlfeqb.jpg" alt="" />
+    </div>
+</Carousel>
+  )
 }
-
