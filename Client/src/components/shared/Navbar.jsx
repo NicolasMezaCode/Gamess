@@ -9,12 +9,12 @@ export default function Navbar() {
 
       <div className='col-span-1 m-auto'>
         <a href="/" className=''>
-          <div className=' inline-flex'>
+          <div className=' inline-flex hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>
             <figure>
-              <img className='' src={logo} alt="Website Logo" />
+              <img className='' src={logo} alt="Website Logo " />
             </figure>
-            <div className='my-auto mx-3'>
-              <h2 className='text-4xl font-poppins'>Gamess</h2>
+            <div className='my-auto mx-3 hover:scale-101'>
+              <h2 className='text-4xl font-poppins '>Gamess</h2>
             </div>
           </div>
 
