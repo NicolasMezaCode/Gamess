@@ -14,7 +14,7 @@ export default function Game() {
   const params=useParams()
   const id=params.id
   const [gameData,setGameData]=useState()
-  
+  const [urls,setUrls]=useState()
   useEffect(() => {
     const gamePage=Promise.resolve(getGamePage(id))
     gamePage.then(data=>{
@@ -29,7 +29,7 @@ export default function Game() {
         imageUrls.push(`https://images.igdb.com/igdb/image/upload/t_1080p/${id}.jpg`)
       })
     }
-    console.log(imageUrls)
+    setUrls(imageUrls)
   },[gameData])
 
   return (
@@ -40,8 +40,7 @@ export default function Game() {
       <Information />
       {gameData?<Sellers summary={gameData.summary} />:null}
       {/* <SeSellersllers /> */}
-      
-      {gameData?<Gallery cover={gameData.screenshot} />:null}
+      {urls?<Gallery urls={urls} />:null}
       {gameData?<Similar name={gameData.name} cover={gameData.cover} similar={gameData.similar_games}  />:null
       }
     </div>
