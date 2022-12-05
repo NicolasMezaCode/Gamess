@@ -33,7 +33,7 @@ export default function Hero({ cover, rating, name, genres, platforms, engine })
                             </ul>
                             <ul className='grid grid-cols-2 min-h-full'>
                                 <li className='py-10'>Platforms: </li>
-                                <li className='py-10  '>{platforms ? platforms.map((platform) => <li key={platform.id} className='ml-1 mr-1 h-fit'>{platform.abbreviation}</li>) : null}  </li>
+                                <li className='py-10 flex justify-between max-w-[10rem] flex-wrap '>{platforms ? platforms.map((platform) => <li key={platform.id} className=''>{platform.abbreviation}</li>) : null}  </li>
                             </ul>
                             <ul className='grid grid-cols-2 min-h-full '>
                                 <li className='py-10 '>Engine: </li>

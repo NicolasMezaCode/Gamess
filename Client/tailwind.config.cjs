@@ -49,7 +49,10 @@ module.exports = {
       },
       scale: {
         '101': '1.01',
-      }
+      },
+      opacity: {
+        '85': '.85',
+      },
     },
   },
   plugins: [],

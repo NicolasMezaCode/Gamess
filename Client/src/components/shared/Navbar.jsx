@@ -20,7 +20,6 @@ export default function Navbar() {
 
         </a>
       </div>
-
       <div className="col-span-3">
       <Searchbarmenu />
       </div>
@@ -28,8 +27,8 @@ export default function Navbar() {
       <div  className="col-span-1"></div>
 
       <div className='mt-3 mr-10 mb-3 ml-auto col-span-2 content-center'>
-        <button className='py-2 px-8 rounded-md mr-3.5 text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer' >Log in</button>
-        <button className='py-2 px-8 rounded-md mr-3.5 text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer'>Register</button>
+        <button className='py-2 px-8 rounded-md mr-3.5 text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101' >Log in</button>
+        <button className='py-2 px-8 rounded-md mr-3.5 text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101'>Register</button>
       </div>
 
     </div>
