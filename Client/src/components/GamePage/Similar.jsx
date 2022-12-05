@@ -45,7 +45,7 @@ export default function Similar({name, cover, id}) {
                             <a hto={`/game/${id}`}>
                                 <figure className="ml-9 mr-9 hover:drop-shadow-lg transition-all duration-300 ease-linear opacity-80 hover:opacity-100 hover:scale-101">
                                     <img src={image} alt="cover of the games" className="rounded-lg"></img>
-                                    <span className="flex  items-center justify-center mt-2">
+                                    <span className="flex  items-center justify-center mt-2 ">
                                         <h4 className="text-white font-poppins mr-1 text-3xl text-center">{name}</h4>
                                     </span>
                                 </figure>
