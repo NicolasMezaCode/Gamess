@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Description({summary}) {
+export default function Summary({summary}) {
 
   return (
     <div className=' min-h-fit '>

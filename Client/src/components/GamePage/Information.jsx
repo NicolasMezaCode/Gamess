@@ -1,31 +1,35 @@
-import React from "react";
+import React from 'react'
 
-export default function Information() {
-  return (
-    <div className="p-5 text-3xl text-not-white min-h-fit">
-      <div className="p-12 h-48 max-w-screen-xl mx-auto rounded-md bg-medium-grey shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear">
-        <div className="grid grid-col-4 grid-flow-col gap-4">
-          <h2>HowLongToBeat</h2>
-          <div>
-            <ul>
-              <li>Main Story</li>
-              <li>12 hours</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li>Story + Sides</li>
-              <li>15 hours</li>
-            </ul>
-          </div>
-          <div>
-            <ul>
-              <li>Everything</li>
-              <li>16 hours</li>
-            </ul>
-          </div>
+export default function Information({ id, category, release, modes, multiplayer, tags }) {
+
+    return (
+        <div className=' text-4xl'>
+            <div className='my-12'>
+                <div className=' max-w-screen-md mx-auto rounded-md bg-light-grey shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear'>
+                    <div className=' px-12 text-2xl '>
+                        <ul className='grid grid-cols-3 min-h-full'>
+                            <li className='py-10'>Category: </li>
+                            <li className='py-10 col-span-2'>{category ? category.map((category) => <li className='ml-1 mr-1' key={category.id}>{category.name}</li>) : null} </li>
+                        </ul>
+                        <ul className='grid grid-cols-3 min-h-full'>
+                            <li className='py-10'>Release Date: </li>
+                            <li className='py-10 col-span-2'>  {release ? release.map((release) => <li className='ml-1 mr-1' key={release.id}>{release.date}</li>) : null}  </li>
+                        </ul>
+                            <ul className='grid grid-cols-3 min-h-full '>
+                                <li className='py-10 '>Game Modes: </li>
+                                <li className='py-10 col-span-2'> {modes ? modes.map((modes) => <li className='ml-1 mr-1' key={modes.id}>{modes.name}</li>) : null} </li>
+                            </ul>
+                        <ul className='grid grid-cols-3 min-h-full'>
+                            <li className='py-10'>Multiplayer Modes: </li>
+                            <li className='py-10 col-span-2'> {multiplayer ? multiplayer.map((multiplayer) => <li className='ml-1 mr-1' key={multiplayer.id}>{multiplayer.name}</li>) : null} </li>
+                        </ul>
+                        <ul className='grid grid-cols-3 min-h-full'>
+                            <li className='py-10'>Tags: </li>
+                            <li className='py-10 col-span-2'> {tags ? tags.map((tags) => <li className='ml-1 mr-1' key={tags.id}>{tags.name}</li>) : null} </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    )
 }

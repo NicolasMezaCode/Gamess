@@ -46,6 +46,9 @@ module.exports = {
       maxWidth:{
         '85':'85%'
       },
+      scale: {
+        '101': '1.01',
+      }
     },
   },
   plugins: [],

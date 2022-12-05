@@ -14,7 +14,7 @@ export default function Searchbarmenu() {
   return (
     <form onSubmit={handleSubmit} className="my-3">
       <Input
-      className=' w-136  bg-white z-40 rounded-lg'
+      className=' w-full  bg-white rounded-xl'
       icon='search'
       iconPosition='left'
       placeholder='Search your game...'
