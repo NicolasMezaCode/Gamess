@@ -11,7 +11,7 @@ export default function MostRated() {
       setMostrated(data)
     })
   },[])
-  console.log(mostRated)
+  console.log("mostRated",mostRated)
   return (
     <div className='flex flex-col justify-center items-center'>
       <div className='flex justify-center items-center p-4 bg-zinc-900 rounded-lg'>

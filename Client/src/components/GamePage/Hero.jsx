@@ -1,6 +1,4 @@
 import { React, useState, useEffect } from 'react'
-import { getCover } from '../../helpers/getCover'
-import { useParams } from "react-router-dom";
 import { AiFillStar } from 'react-icons/Ai'
 
 export default function Hero({ cover, rating, name, genres, platforms, engine }) {
@@ -43,6 +41,7 @@ export default function Hero({ cover, rating, name, genres, platforms, engine })
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     )
