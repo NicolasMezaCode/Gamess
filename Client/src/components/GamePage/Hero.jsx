@@ -7,13 +7,13 @@ export default function Hero({ cover, rating, name, genres, platforms, engine })
     const stars = Math.round(rating) * 5 / 100
     const formatedRating = stars.toFixed(1)
     return (
-        <div className='flex w-fit h-screen lg:h-min relative'>
-            <div className='h-140 w-screen  '>
+        <div className='flex min-h-fit relative'>
+            <div className='h-140 w-screen min-w-full  '>
                 <figure style={{ backgroundImage: `url(${image})` }} className='bg-no-repeat bg-cover bg-center blur-md min-h-full min-w-full bg-fixed '></figure>
             </div>
-            <div className='absolute min-w-full  pt-40 p-16 ' >
+            <div className='absolute min-w-full  pt-24 p-16  ' >
                 <div className='lg:grid grid-cols-2 lg:gap-10'>
-                    <div className='mx-auto w-128 h-132  lg:mb-0 mb-10'>
+                    <div className='mx-auto w-128 h-132  lg:mb-0 mb-10 '>
                         <img src={imageSmall} alt="" className='mx-auto w-screen  rounded-xl border-solid border-4 border-black shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear ' />
                     </div>
                     <div className='mx-auto xl:w-140 backdrop-blur-xl bg-white/80 w-128 rounded-xl shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear '>

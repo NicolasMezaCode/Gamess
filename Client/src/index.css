@@ -6,4 +6,7 @@
     * {
       @apply box-border;
     } 
+    body {
+      min-width: 550px;
+  }
   }
