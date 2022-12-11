@@ -7,14 +7,14 @@ export default function Hero({ cover, rating, name, genres, platforms, engine })
     const stars = Math.round(rating) * 5 / 100
     const formatedRating = stars.toFixed(1)
     return (
-        <div className='flex w-fit relative'>
-            <div className='h-140 w-screen'>
+        <div className='flex w-fit h-screen lg:h-min relative'>
+            <div className='h-140 w-screen  '>
                 <figure style={{ backgroundImage: `url(${image})` }} className='bg-no-repeat bg-cover bg-center blur-md min-h-full min-w-full bg-fixed '></figure>
             </div>
-            <div className='absolute min-w-full pt-40 p-16' >
+            <div className='absolute min-w-full  pt-40 p-16 ' >
                 <div className='lg:grid grid-cols-2 lg:gap-10'>
                     <div className='mx-auto w-128 h-132  lg:mb-0 mb-10'>
-                        <img src={imageSmall} alt="" className=' w-screen  rounded-xl border-solid border-4 border-black shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear ' />
+                        <img src={imageSmall} alt="" className='mx-auto w-screen  rounded-xl border-solid border-4 border-black shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear ' />
                     </div>
                     <div className='mx-auto xl:w-140 backdrop-blur-xl bg-white/80 w-128 rounded-xl shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear '>
                         <div className='text-center'>
@@ -26,7 +26,7 @@ export default function Hero({ cover, rating, name, genres, platforms, engine })
                         </div>
                         <div className=' xl:px-36 px-16 text-2xl'>
                             <ul className='grid grid-cols-2 min-h-full'>
-                                <li className='py-10'>Genres: </li>
+                                <li className='py-10 '>Genres: </li>
                                 <li className='py-10'>{genres ? genres.map((genre) => <li className='ml-1 mr-1' key={genre.id}>{genre.name}</li>) : null}</li>
                             </ul>
                             <ul className='grid grid-cols-2 min-h-full'>
