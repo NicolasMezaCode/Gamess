@@ -19,8 +19,13 @@ export default function Navbar() {
       <Searchbarmenu/>
 
       <div className='mt-3 mr-10 mb-3 ml-auto '>
-        <button className='py-2 px-8 rounded-md bg-gray-100 mr-3.5 hover:rounded-xl hover:bg-cyan-400 transition-all duration-300 ease-linear cursor-pointer' >Log in</button>
-        <button className='py-2 px-8 rounded-md bg-neutral-800 hover:bg-cyan-400 text-white hover:text-black hover:rounded-xl  transition-all duration-300 ease-linear cursor-pointer'>Register</button>
+
+        <a href="/signUp">
+          <button className='py-2 px-8 rounded-md bg-gray-100 mr-3.5 hover:rounded-xl hover:bg-cyan-400 transition-all duration-300 ease-linear cursor-pointer' >Log in</button>
+        </a>
+        <a href="/signUp">
+          <button className='py-2 px-8 rounded-md bg-neutral-800 hover:bg-cyan-400 text-white hover:text-black hover:rounded-xl  transition-all duration-300 ease-linear cursor-pointer'>Register</button>
+        </a>
       </div>
       
     </nav>

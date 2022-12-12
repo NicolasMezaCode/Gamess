@@ -17,7 +17,7 @@ export default function Recent() {
         <h3 className='font-poppins font-medium text-white text-5xl'>Recent Games</h3>
       </div>
       <div className='grid gap-16 grid-cols-2 grid-rows-3 mt-16  '>
-        {recent.map((game)=><RecentCard key={game.id} cover={game.cover} id={game.id} name={game.name} platforms={game.platforms} genres={game.genres} rating={game.aggregated_rating}/>)}
+        {recent?recent.map((game)=><RecentCard key={game.id} cover={game.cover} id={game.id} name={game.name} platforms={game.platforms} genres={game.genres} rating={game.aggregated_rating}/>):null}
       </div>
     </div>
   )
