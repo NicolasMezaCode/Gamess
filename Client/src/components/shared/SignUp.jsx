@@ -4,7 +4,6 @@ import { createUser } from '../../helpers/createUser'
 import  {useAuth} from '../../context/AuthContext'
 import { useState } from 'react'
 import { useEffect } from 'react'
-
 export default function SignUp() {
     const {signup}=useAuth()
     const inputName=useRef()
@@ -12,7 +11,7 @@ export default function SignUp() {
     const inputPassword=useRef()
     const [error,setError]=useState('')
     const [loading,setLoading]=useState(false)
-   
+
     useEffect(() => {
         if(error !== ''){
             inputName.current.focus()
@@ -25,16 +24,17 @@ export default function SignUp() {
             email:inputEmail.current.value,
             password:inputPassword.current.value
         }
-            if(user.username && user.email && user.password !== ''){
+            if(user.username && user.email && user.password !== '' && user.password.length >= 6){
                 setError('')
                 setLoading(true)
                 await createUser(user)
                 await signup(user)
             }
-            else{
-            setError('Failed to create account')
-            }
+            else(
+                setError('Failed to create an account')
+            )
         setLoading(false)
+
     }
   return (
     <div className="mt-10 mb-10 flex flex-col justify-center items-center">
