@@ -24,11 +24,11 @@ export default function GameItem({cover,id,name,platforms,genres,rating}) {
         </span>
         <h3 className='font-semibold mb-1'>Genres:</h3>
         <div className='flex justify-center items-center flex-wrap min-w-[12.5rem]'>
-            {genres.map((genre)=><h4 className='ml-1 mr-1' key={genre.id}>{genre.name}</h4>)}
+            {genres?genres.map((genre)=><h4 className='ml-1 mr-1' key={genre.id}>{genre.name}</h4>):null}
         </div>
         <h3 className='font-semibold mb-1 mt-1'>Platforms:</h3>
         <div className='flex justify-between max-w-[10rem] flex-wrap'>
-            {platforms.map((platform)=><h4 key={platform.id} className='ml-1 mr-1 h-fit'>{platform.abbreviation}</h4>)}
+            {platforms?platforms.map((platform)=><h4 key={platform.id} className='ml-1 mr-1 h-fit'>{platform.abbreviation}</h4>):null}
         </div>
       </section>
     </div>
