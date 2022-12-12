@@ -7,21 +7,22 @@ import GamePage from './components/GamePage/GamePage'
 import SearchPage from './components/shared/SearchPage'
 import SignUp from './components/shared/SignUp'
 import AuthProvider from './context/AuthContext'
+import Profile from './components/Profile/Profile'
 
 function App() {
   return (
     <div className="bg-not-white flex flex-col">
     <AuthProvider>
       <Navbar/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/game/:id' element={<GamePage/>}/>
-          <Route path='/search/:name' element={<SearchPage/>}/>
-          <Route path='/search/' element={<SearchPage/>}/>
-          <Route path='/signUp' element={<SignUp/>}/>
-        </Routes>
-        <Footer />
-    </AuthProvider> 
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/game/:id' element={<GamePage/>}/>
+        <Route path='/search/:name' element={<SearchPage/>}/>
+        <Route path='/search/' element={<SearchPage/>}/>
+        <Route path='/signUp' element={<SignUp/>}/>
+        <Route path='/profile/:id' element={<Profile/>}/>
+      </Routes>
+      <Footer />
     </div>
   )
 }

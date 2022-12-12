@@ -12,9 +12,9 @@ export default function Searchbarmenu() {
     navigate(`/search/${name}`)
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="my-3">
       <Input
-      className='my-3  w-136  bg-white z-40 rounded-lg'
+      className=' w-full  bg-white rounded-xl'
       icon='search'
       iconPosition='left'
       placeholder='Search your game...'

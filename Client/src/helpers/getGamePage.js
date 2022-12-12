@@ -4,7 +4,7 @@ export const getGamePage=async(id)=>{
     try{
         const res=await axios.get(import.meta.env.VITE_API_PAGE+id);
         const gameData=await res.data
-        console.log(gameData)
+        console.log("gameData",gameData)
         return gameData
     }
     catch(err){console.log(err)}

@@ -8,10 +8,10 @@ const formatedRating=stars.toFixed(1)
   return (
     <div className='mt-3'>
       <Link to={`/game/${id}`}>
-        <figure className='ml-9 mr-9'><img className='' src={image} alt="cover of the games" />
-          <span className='flex  items-center justify-center mt-2'>
-            <h4 className='text-white font-poppins mr-1 text-3xl'>{formatedRating}</h4>
-            <AiFillStar className='text-amber-600 w-7 h-auto'/>
+        <figure className='mobile:mx-9 mx-3'><img className='min-w-full rounded-md opacity-80 hover:opacity-100 transition-all duration-300 ease-linear' src={image} alt="cover of the games" />
+          <span className='flex  items-center justify-center py-5'>
+            <h4 className='text-white font-poppins mr-1 mobile:text-3xl text-xl'>{formatedRating}</h4>
+            <AiFillStar className='text-amber-600 mobile:w-7 w-5 h-auto'/>
           </span>
         </figure>
       </Link>

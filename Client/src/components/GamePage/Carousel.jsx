@@ -1,12 +1,11 @@
 import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 export default function Gallery({urls}) {
-    console.log()
 
 
   return (
-    <Carousel autoPlay interval="800000" transitionTime="1000" infiniteLoop>
+    <Carousel autoPlay interval="5000" transitionTime="1000" infiniteLoop className="drop-shadow-xl rounded-md">
 
     <div>
         <img src={`${urls[0]}`} alt="" />
@@ -19,6 +18,9 @@ export default function Gallery({urls}) {
     </div>
     <div>
         <img src={`${urls[3]}`} alt="" />
+    </div>
+    <div>
+        <img src={`${urls[4]}`} alt="" />
     </div>
 
 </Carousel>
