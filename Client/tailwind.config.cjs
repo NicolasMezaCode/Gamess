@@ -33,6 +33,7 @@ module.exports = {
         '3xl': '0 6px 6px  rgba(0, 0, 0, 0.35)'
       },
       lineHeight: {
+        '11': '3rem',
         '13': '4rem',
         '15': '6rem',
 

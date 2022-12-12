@@ -11,12 +11,12 @@ export default function Hero({ cover, rating, name, genres, platforms, engine })
             <div className='h-140 w-screen min-w-full  '>
                 <figure style={{ backgroundImage: `url(${image})` }} className='bg-no-repeat bg-cover bg-center blur-md min-h-full min-w-full bg-fixed '></figure>
             </div>
-            <div className='absolute min-w-full  pt-24 mobile:p-16 p:7' >
+            <div className='absolute min-w-full  mobile:p-16 p:7 mt-16' >
                 <div className='laptop:grid grid-cols-2 laptop:gap-10'>
-                    <div className='mx-auto tablet:w-128 w-72  h-132  laptop:mb-0 mb-10 '>
+                    <div className='mx-auto tablet:w-128 mobile:w-96 w-72  h-132  laptop:mb-0 mb-10 '>
                         <img src={imageSmall} alt="" className='mx-auto w-screen  rounded-xl border-solid border-4 border-black shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear ' />
                     </div>
-                    <div className='mx-auto xl:w-140 backdrop-blur-xl bg-white/80 tablet:w-128 mobile:w-96 w-72 rounded-xl shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear '>
+                    <div className='mx-auto xl:w-140 backdrop-blur-xl bg-white/80 mobile:w-128 w-72 rounded-xl shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear '>
                         <div className='text-center'>
                             <h2 className='mobile:py-12 pt-7 pb-2 mobile:text-5xl text-3xl'>{name}</h2>
                             <span className='flex  items-center justify-center mt-3 mb-3'>
