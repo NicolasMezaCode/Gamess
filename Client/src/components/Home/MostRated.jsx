@@ -15,9 +15,9 @@ export default function MostRated() {
   return (
     <div className='flex flex-col justify-center items-center'>
       <div className='flex justify-center items-center p-4 bg-zinc-900 rounded-lg'>
-        <h3 className='font-poppins font-medium text-white text-5xl  '>Most Rated Games</h3>
+        <h3 className='font-poppins font-medium text-white mobile:text-5xl text-3xl '>Most Rated Games</h3>
       </div>
-      <section className='bg-zinc-900 w-screen max-h-[33rem] flex justify-around items-center m-16 pb-16 pt-16'>
+      <section className='bg-zinc-900 w-screen laptop:flex grid grid-cols-2 grid-rows-3 justify-around items-center tablet:my-16 mt-5 mb-10 mobile:py-16 py-7'>
         {mostRated.map((game)=><RatedGame key={game.id}  rating={game.aggregated_rating} cover={game.cover} id={game.id}/>)}
       </section>
     </div>
