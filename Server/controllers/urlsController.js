@@ -49,7 +49,7 @@ const showGamePage=async(req,res)=>{
             "Client-ID":process.env.CLIENT_ID,
             Authorization: `Bearer ${process.env.AUTHORIZATION}`,
         },
-        data:`fields name,screenshots.*,platforms.*,genres.*,aggregated_rating,summary,involved_companies.*,artworks.*,cover.*,game_engines.*,similar_games.cover,id;where id=${id};category.*;first_release_date.*;game_modes.*;multiplayer_modes.*;tags.*; `
+        data:`fields name,screenshots.*,platforms.*,genres.*,aggregated_rating,summary,involved_companies.*,artworks.*,cover.*,game_engines.*,game_modes.*,player_perspectives.*,release_dates.*,multiplayer_modes.*,similar_games.cover.*,keywords.*,websites.*, id;where id=${id}; `
     })
     .then((response)=>{
         res.json(response.data)
