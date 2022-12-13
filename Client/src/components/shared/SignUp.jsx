@@ -4,7 +4,9 @@ import { createUser } from '../../helpers/createUser'
 import  {useAuth} from '../../context/AuthContext'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 export default function SignUp() {
+    const navigate=useNavigate()
     const {signup}=useAuth()
     const inputName=useRef()
     const inputEmail=useRef()
@@ -27,8 +29,9 @@ export default function SignUp() {
             if(user.username && user.email && user.password !== '' && user.password.length >= 6){
                 setError('')
                 setLoading(true)
-                await createUser(user)
-                await signup(user)
+                let signUp=await createUser(user)
+                await signup(user.username,signUp.uid)
+                navigate(`/profile/${signUp.uid}`)
             }
             else(
                 setError('Failed to create an account')

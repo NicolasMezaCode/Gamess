@@ -27,15 +27,15 @@ export default function Hero({ cover, rating, name, genres, platforms, engine })
                         <div className=' xl:px-36 px-16 mobile:text-2xl text-xl'>
                             <ul className='grid grid-cols-2 min-h-full'>
                                 <li className='mobile:py-10 py-2 mobile:ml-0 -ml-10 mobile:no-underline overline'>Genres: </li>
-                                <li className='mobile:py-10 py-2 mobile:mb-0 mb-3'>{genres ? genres.map((genre) => <li className='ml-1 mr-1' key={genre.id}>{genre.name}</li>) : null}</li>
+                                <ul className='mobile:py-10 py-2 mobile:mb-0 mb-3'>{genres ? genres.map((genre) => <li className='ml-1 mr-1' key={genre.id}>{genre.name}</li>) : null}</ul>
                             </ul>
                             <ul className='grid grid-cols-2 min-h-full'>
                                 <li className='mobile:py-10 py-2 mobile:ml-0 -ml-10 mobile:no-underline overline'>Platforms: </li>
-                                <li className='mobile:py-10 py-2 mobile:mb-0 mb-3 flex justify-between max-w-[10rem] flex-wrap '>{platforms ? platforms.map((platform) => <li key={platform.id} className=''>{platform.abbreviation}</li>) : null}  </li>
+                                <ul className='mobile:py-10 py-2 mobile:mb-0 mb-3 flex justify-between max-w-[10rem] flex-wrap '>{platforms ? platforms.map((platform) => <li key={platform.id} className=''>{platform.abbreviation}</li>) : null}  </ul>
                             </ul>
                             <ul className='grid grid-cols-2 min-h-full mobile:pb-0 pb-5'>
                                 <li className='mobile:py-10 py-2 mobile:ml-0 -ml-10 mobile:no-underline overline'>Engine: </li>
-                                <li className='mobile:py-10 py-2 mobile:mb-0 mb-3 '>{engine ? engine.map((engine) => <li key={engine.id} className='ml-1 mr-1 h-fit'>{engine.name}</li>) : null} </li>
+                                <ul className='mobile:py-10 py-2 mobile:mb-0 mb-3 '>{engine ? engine.map((engine) => <li key={engine.id} className='ml-1 mr-1 h-fit'>{engine.name}</li>) : null} </ul>
                             </ul>
 
                         </div>

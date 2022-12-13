@@ -8,15 +8,15 @@ export default function Information({ keywords, perspective, release, modes, }) 
                     <div className=' px-12 md:text-3xl sm:text-2xl text-xl'>
                         <ul className='grid  grid-cols-2 min-h-full'>
                             <li className='py-10'>Player Perspective: </li>
-                            <li className='py-10 '> {perspective ? perspective.map((perspective) => <li className='ml-1 mr-1' key={perspective.id}>{perspective.name}</li>) : null}</li>
+                            <ul className='py-10 '> {perspective ? perspective.map((perspective) => <li className='ml-1 mr-1' key={perspective.id}>{perspective.name}</li>) : null}</ul>
                         </ul>
                         <ul className='grid  grid-cols-2 min-h-full '>
                             <li className='py-10 '>Game Modes: </li>
-                            <li className='py-10 '> {modes ? modes.map((modes) => <li className='' key={modes.id}>{modes.name}</li>) : null} </li>
+                            <ul className='py-10 '> {modes ? modes.map((modes) => <li className='' key={modes.id}>{modes.name}</li>) : null} </ul>
                         </ul>
                         <ul className='grid  grid-cols-2 min-h-full'>
                             <li className='py-10'>Release Dates: </li>
-                            <li className='py-10'> {release ? release.map((release) => <li className='md:my-2 my-1' key={release.id}>{release.human}</li>) : null} </li>
+                            <ul className='py-10'> {release ? release.map((release) => <li className='md:my-2 my-1' key={release.id}>{release.human}</li>) : null} </ul>
                         </ul>
                     </div>
                 </div>

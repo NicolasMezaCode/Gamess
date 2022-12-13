@@ -10,7 +10,10 @@ export function useAuth(){
 export default function AuthProvider({children}){
 
     const [currentUser,setCurrentUser]=useState()
-    function signup(user){
+    function signup(username,uid){
+        const user={
+            username,uid
+        }
         setCurrentUser(current=>current=user)
         console.log("siuuuu",user)
     }

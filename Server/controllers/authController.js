@@ -14,7 +14,8 @@ const signUp=async(req,res)=>{
         emailVerified:false,
         disabled:false
     })
-    res.send("User created successfully")
+    const data=await admin.auth().getUser(userResponse.uid)
+    res.status(200).json(data)
 }
 module.exports={
     signUp,
