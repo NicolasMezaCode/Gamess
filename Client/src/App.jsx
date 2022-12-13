@@ -1,6 +1,6 @@
 import 'semantic-ui-css/semantic.min.css'
 import {Route, Routes} from 'react-router-dom'
-import Navbar from "./components/shared/Navbar"
+import Navigation from './components/shared/Navigation'
 import Footer from './components/shared/Footer'
 import Home from './components/Home/Home'
 import GamePage from './components/GamePage/GamePage'
@@ -11,7 +11,7 @@ import Profile from './components/Profile/Profile'
 function App() {
   return (
     <div className="bg-not-white flex flex-col">
-      <Navbar/>
+      <Navigation/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/game/:id' element={<GamePage/>}/>
