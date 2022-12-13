@@ -1,9 +1,12 @@
 import React from 'react'
 import Searchbarmenu from './Searchbar'
 import logo from '../../assets/game-icons_game-console.svg'
-
-
+import {useAuth} from '../../context/AuthContext'
 export default function Navbar() {
+  const {currentUser,logout}=useAuth()
+  const handleLogout=()=>{
+    logout()
+  }
   return (
     <div className='p-3 pr-10 grid grid-cols-7 bg-gray-300'>
 
@@ -27,8 +30,22 @@ export default function Navbar() {
       <div  className="col-span-1"></div>
 
       <div className='ml-auto my-auto col-span-2 content-center'>
-        <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101' >Log in</button>
-        <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101'>Register</button>
+      {
+        currentUser?
+        <>
+          <a  href={`/profile/${currentUser.uid}`} ><img src={`${currentUser.photoId}`} alt="" /></a>
+          <button onClick={handleLogout}>Log out</button>
+        </>
+        :
+        <>
+          <a href='/login'>
+            <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101' >Log in</button>
+          </a>
+          <a href="/signUp">
+            <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101'>Register</button>
+          </a>
+        </>
+      }
       </div>
 
     </div>

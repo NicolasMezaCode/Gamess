@@ -1,11 +1,31 @@
 import React from 'react'
+import { useEffect,useState } from 'react'
 import Avatar from './Avatar'
 import Favorites from './Favorites'
-
+import { useParams } from "react-router-dom";
+import { getProfile } from '../../helpers/getProfile';
 export default function Profile() {
+  const params=useParams()
+  const id=params.id
+  const [profileData,setProfileData]=useState()
+  const [avatar,setAvatar]=useState()
+  useEffect(() => {
+    const gamePage=Promise.resolve(getProfile(id))
+    gamePage.then(data=>{
+      data=setProfileData(data)
+    })
+  }, [])
+  useEffect(() => {
+    if(profileData != undefined){
+      setAvatar({
+        username:profileData.displayName,
+        photo:profileData.photoURL,
+      })
+    }
+  }, [profileData])
   return (
       <div className='p-10'>
-        <Avatar />
+        {avatar?<Avatar username={avatar.username} photo={avatar.photo} />:null}
         <Favorites />
       </div>
   )

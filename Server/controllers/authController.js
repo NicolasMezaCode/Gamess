@@ -6,17 +6,25 @@ admin.initializeApp({
         privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n')
     })
 })
+
 const signUp=async(req,res)=>{
-    console.log(req.body)
     const userResponse= await admin.auth().createUser({
         email: req.body.email,
         password:req.body.password,
         emailVerified:false,
-        disabled:false
+        disabled:false,
+        displayName:req.body.username,
+        photoURL:req.body.photoId,
     })
     const data=await admin.auth().getUser(userResponse.uid)
     res.status(200).json(data)
 }
+
+const profile=async(req,res)=>{
+    const data=await admin.auth().getUser(req.params.id)
+    res.status(200).json(data)
+}
+
 module.exports={
-    signUp,
+    signUp,profile
 }

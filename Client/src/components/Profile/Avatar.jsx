@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function Avatar() {
-  const userName = "Encara Messi";
+
+export default function Avatar({username,photo}) {
 
   return (
     <div>
@@ -11,16 +11,12 @@ export default function Avatar() {
             Welcome back
           </h3>
           <h3 className=" text-center text-wierdo-orange font-poppins mr-1 text-4xl">
-            {userName}
+            {username}
           </h3>
         </div>
         <div className="">
           <figure className="mx-auto">
-            <img
-              src={`https://avatars.dicebear.com/api/bottts/${userName}.svg`}
-              alt="User avatar"
-              className="avatar-image"
-            />
+            <img src={`${photo}`} alt="User avatar" className="avatar-image"/>
           </figure>
         </div>
       </div>

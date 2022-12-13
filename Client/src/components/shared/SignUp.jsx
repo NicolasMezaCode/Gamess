@@ -24,14 +24,15 @@ export default function SignUp() {
         const user={
             username:inputName.current.value,
             email:inputEmail.current.value,
-            password:inputPassword.current.value
+            password:inputPassword.current.value,
+            photoId:`https://avatars.dicebear.com/api/bottts/${inputName.current.value}.svg`
         }
             if(user.username && user.email && user.password !== '' && user.password.length >= 6){
                 setError('')
                 setLoading(true)
                 let signUp=await createUser(user)
-                await signup(user.username,signUp.uid)
-                navigate(`/profile/${signUp.uid}`)
+                await signup(user.username,signUp.uid,user.photoId)
+                navigate(`/`)
             }
             else(
                 setError('Failed to create an account')

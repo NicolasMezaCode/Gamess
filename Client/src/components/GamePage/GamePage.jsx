@@ -32,6 +32,7 @@ export default function Game() {
       })
     }
     setUrls(imageUrls)
+    
     let similarGames=[]
     if(gameData!=undefined){ 
       gameData.similar_games.map((similar)=>{
