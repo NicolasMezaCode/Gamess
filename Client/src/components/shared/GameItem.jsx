@@ -6,7 +6,7 @@ export default function GameItem({cover,id,name,platforms,genres,rating}) {
   const stars=Math.round(rating)*5/100
   const formatedRating=stars.toFixed(1)
   return (
-    <div className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+    <div className='bg-darker-grey h-80 w-600 rounded-lg drop-shadow-sm flex justify-around'>
          <figure className='ml-9 mr-9 flex items-center'>
         <Link to={`/game/${id}`}>
           <img className='h-auto w-44' src={image} alt="cover of the games" />

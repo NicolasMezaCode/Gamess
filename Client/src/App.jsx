@@ -8,6 +8,7 @@ import SearchPage from './components/shared/SearchPage'
 import SignUp from './components/shared/SignUp'
 import AuthProvider from './context/AuthContext'
 import Profile from './components/Profile/Profile'
+import Login from './components/shared/Login'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/search/' element={<SearchPage/>}/>
         <Route path='/signUp' element={<SignUp/>}/>
         <Route path='/profile/:id' element={<Profile/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
       <Footer />
     </AuthProvider>
