@@ -16,7 +16,6 @@ function App() {
       
     <AuthProvider>
       <Navigation/>
-      <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/game/:id' element={<GamePage/>}/>

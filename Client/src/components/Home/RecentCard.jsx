@@ -1,10 +1,13 @@
-import React from 'react'
-import {AiFillStar} from 'react-icons/Ai'
-import {Link} from 'react-router-dom'
-export default function RecentCard({cover,id,name,platforms,genres,rating}) {
-    const image=`https://images.igdb.com/igdb/image/upload/t_cover_big/${cover.image_id}.jpg`
-    const stars=Math.round(rating)*5/100
-    const formatedRating=stars.toFixed(1)
+import { React, useState } from 'react'
+import { AiFillStar, AiFillHeart } from 'react-icons/Ai'
+import { Link } from 'react-router-dom'
+
+export default function RecentCard({ cover, id, name, platforms, genres, rating }) {
+  const image = `https://images.igdb.com/igdb/image/upload/t_cover_big/${cover.image_id}.jpg`
+  const stars = Math.round(rating) * 5 / 100
+  const formatedRating = stars.toFixed(1)
+
+  const [likeColor, setLikeColor] = useState('grey');
 
   return (
     <div className='bg-darker-grey tablet:my-0  my-7 tablet:h-96 h-80 laptop:w-600 tablet:w-128 w-full rounded-lg drop-shadow-md flex justify-around hover:scale-101 hover:drop-shadow-lg transition-all duration-300 ease-linear'>
@@ -13,25 +16,30 @@ export default function RecentCard({cover,id,name,platforms,genres,rating}) {
           <img className='h-auto w-56 rounded-lg drop-shadow-lg transition-all duration-300 ease-linear opacity-85 hover:opacity-100' src={image} alt="cover of the games" />
         </Link>
       </figure>
-      <section className='flex justify-center flex-col items-center mobile:mx-2 mx-0 max-w-[14.5rem]'>
-      <span className='flex justify-center w-fit'>
-      <Link to={`/game/${id}`} className='hover:text-wierdo-orange transition-all duration-300 ease-linear'>
-        {<h3 className='mobile:text-2xl text-xl font-bold text-center underline underline-offset-4 decoration-1 min-w-[11rem]'>{name}</h3>}
-      </Link>
-      </span>
+      <section className='flex justify-center flex-col items-center mobile:mx-2 mx-0 max-w-[14.5rem] '>
+        <span className='flex justify-center w-fit'>
+          <Link to={`/game/${id}`} className='hover:text-wierdo-orange transition-all duration-300 ease-linear'>
+            {<h3 className='mobile:text-2xl text-xl font-bold text-center underline underline-offset-4 decoration-1 min-w-[11rem]'>{name}</h3>}
+          </Link>
+        </span>
         <span className='flex  items-center justify-center mt-3 mb-3'>
-            <h4 className='font-poppins mr-1 mobile:text-3xl text-xl'>{formatedRating}</h4>
-            <AiFillStar className='text-amber-600 mobile:w-7 w-5 h-auto'/>
+          <h4 className='font-poppins mr-1 mobile:text-3xl text-xl'>{formatedRating}</h4>
+          <AiFillStar className='text-amber-600 mobile:w-7 w-5 h-auto' />
         </span>
         <h3 className='font-semibold mb-1'>Genres:</h3>
         <div className='flex justify-center items-center flex-col tablet:max-w-[12.5rem] max-w-[10rem]'>
-            {genres.map((genre)=><h4 key={genre.id}>{genre.name}</h4>)}
+          {genres.map((genre) => <h4 key={genre.id}>{genre.name}</h4>)}
         </div>
         <h3 className='font-semibold mb-1 mt-1'>Platforms:</h3>
         <div className='flex justify-between tablet:max-w-[10rem] max-w-[7rem] flex-wrap'>
-            {platforms.map((platform)=><h4 key={platform.id} className='ml-1 mr-1 h-fit'>{platform.abbreviation}</h4>)}
+          {platforms.map((platform) => <h4 key={platform.id} className='ml-1 mr-1 h-fit'>{platform.abbreviation}</h4>)}
         </div>
       </section>
+      <div className='absolute w-full h-full '>
+        <div className='flex w-full h-full place-content-end items-end opacity:50 text-'>
+          <AiFillHeart onClick={() => setLikeColor('red')} color={likeColor} className='w-10 h-6 m-1 hover:text-red transition-all duration-300 ease-linear' />
+        </ div>
+      </div>
     </div>
   )
 }

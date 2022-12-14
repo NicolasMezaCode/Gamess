@@ -1,83 +1,91 @@
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu } from 'semantic-ui-react'
-import { getSearch} from '../../helpers/getSearch'
+import { getSearch } from '../../helpers/getSearch'
 import { getRecent } from '../../helpers/getRecent'
 import { useParams } from "react-router-dom";
+import { AiFillStar } from 'react-icons/Ai'
 import GameItem from "./GameItem"
 export default function SearchPage() {
-    const[menu,setMenu]=useState("Game Lists")
-    const [search,setSearch]=useState([])
+    const [menu, setMenu] = useState("Game Lists")
+    const [search, setSearch] = useState([])
 
-    const params=useParams()
-    useEffect(()=>{
-        if(params.name===undefined){
-            const recentGames=Promise.resolve(getRecent())
-            recentGames.then(data=>{
-            setSearch(data)})
+    const params = useParams()
+    useEffect(() => {
+        if (params.name === undefined) {
+            const recentGames = Promise.resolve(getRecent())
+            recentGames.then(data => {
+                setSearch(data)
+            })
         }
-        const searchGames=Promise.resolve(getSearch(params.name))
-        searchGames.then(data=>{
-          setSearch(data)
+        const searchGames = Promise.resolve(getSearch(params.name))
+        searchGames.then(data => {
+            setSearch(data)
         })
         console.log(search)
-      },[])
+    }, [])
 
-    const handleItemClick=(e,{name})=>{
-        setMenu(current=>{
-            return current=name
+    const handleItemClick = (e, { name }) => {
+        setMenu(current => {
+            return current = name
         })
     }
 
+    const [likeColor, setLikeColor] = useState('grey');
 
-  return (
-    <main className='bg-white pb-10'>
-        <Menu tabular>
-            <Menu.Item
-            name='Game Lists'
-            active={menu === 'Game Lists'}
-            onClick={handleItemClick}
-            />
+    return (
+        <main className='bg-white pb-10'>
+            <Menu tabular>
+                <Menu.Item
+                    name='Game Lists'
+                    active={menu === 'Game Lists'}
+                    onClick={handleItemClick}
+                />
 
-            <Menu.Item
-            name='User Lists'
-            active={menu === 'User Lists'}
-            onClick={handleItemClick}
-            />
-        </Menu>
+                <Menu.Item
+                    name='User Lists'
+                    active={menu === 'User Lists'}
+                    onClick={handleItemClick}
+                />
+            </Menu>
 
-            {menu ==="User Lists" && 
-            <div className='flex flex-col justify-center items-center pb-16'>
-                <section className='grid gap-10 grid-cols-2 grid-rows-3 place-items-center mt-16 '>
-                <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
-                    </span>
-                    <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
-                    </span>
-                    <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
-                    </span>
-                    <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
-                    </span>
-                    <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
-                    </span>
-                    <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
-                    </span>
-                    <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
-                    </span>
-                    <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
-                    </span>
-                    <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
-                    </span>
-                    <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
-                    </span>
-                </section>
-            </div>
+            {menu === "User Lists" &&
+                <div className='flex flex-col justify-center items-center pb-16'>
+                    <section className='grid gap-5 grid-cols-2 grid-rows-3 place-items-center mt-16 '>
+                        <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+                        </span>
+                        <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+                        </span>
+                        <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+                        </span>
+                        <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+                        </span>
+                        <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+                        </span>
+                        <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+                        </span>
+                        <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+                        </span>
+                        <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+                        </span>
+                        <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+                        </span>
+                        <span className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+                        </span>
+                    </section>
+                </div>
             }
-            {menu ==="Game Lists" && 
-            <div className='flex flex-col justify-center items-center pb-16'>
-                <section className='grid gap-10 grid-cols-2 grid-rows-3 place-items-center mt-16 '>
-                    {search.map((game)=><GameItem key={game.id} cover={game.cover} id={game.id} name={game.name} platforms={game.platforms} genres={game.genres} rating={game.aggregated_rating}/>)}
-                </section>
-            </div>
+            {menu === "Game Lists" &&
+                <div className='flex flex-col justify-center items-center pb-16'>
+                    <section className='grid gap-10 grid-cols-2 grid-rows-3 place-items-center mt-16 '>
+                        {search.map((game) => <GameItem key={game.id} cover={game.cover} id={game.id} name={game.name} platforms={game.platforms} genres={game.genres} rating={game.aggregated_rating} />)}
+                    </section>
+                    <div className='absolute w-full h-full '>
+                            <div className='flex w-full h-full place-content-end items-end opacity:50 text-'>
+                                <AiFillStar onClick={() => setLikeColor('red')} color={likeColor} className='w-10 h-6 m-1 hover:text-red transition-all duration-300 ease-linear' />
+                            </ div>
+                        </div>
+                </div>
             }
-    </main>
-  )
+        </main>
+    )
 }
