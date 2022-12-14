@@ -48,7 +48,7 @@ export default function SignUp() {
     return (
         <div >
             <div className='py-24 laptop:mx-48 tablet:mx-36 mobile:mx-12 mx-8'>
-                <h1 className='text-5xl mb-10 font-bold'>Login</h1>
+                <h1 className='text-5xl mb-10 font-bold'>Create a Account</h1>
                 <div className='laptop:grid relative grid-cols-2'>
                     <div className=" flex flex-col ">
                         <div>
@@ -98,7 +98,7 @@ export default function SignUp() {
 
                     <div className='laptop:pt-0 pt-16'>
                         <div>
-                            <h2 className='text-2xl font-bold'>Don't have an account?</h2>
+                            <h2 className='text-2xl font-bold my-5'></h2>
                             <h2 className='pt-5 pb-4' >Here are some of the benefits you’ll enjoy:</h2>
                             <div className='text-xl'>
                                 <ul>
@@ -133,7 +133,6 @@ export default function SignUp() {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     )

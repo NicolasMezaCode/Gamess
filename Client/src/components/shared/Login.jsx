@@ -46,7 +46,7 @@ export default function Login() {
     return (
         <div >
             <div className='py-24 laptop:mx-48 tablet:mx-36 mobile:mx-12 mx-8'>
-                <h1 className='text-5xl mb-10 font-bold'>Login</h1>
+                <h1 className='text-5xl mb-10 font-bold'>Log in</h1>
                 <div className='laptop:grid relative grid-cols-2'>
                     <div className=" flex flex-col ">
                         <div>

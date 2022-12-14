@@ -2,18 +2,20 @@ import React from 'react'
 import Searchbarmenu from './Searchbar'
 import logo from '../../assets/game-icons_game-console.svg'
 import { FaBars } from 'react-icons/fa'
-import {useAuth} from '../../context/AuthContext'
+import { useAuth } from '../../context/AuthContext'
 
-export default function Navbar({toggleDropdown}) {
-  const {currentUser,logout}=useAuth()
-  const handleLogout=()=>{
+export default function Navbar({ toggleDropdown }) {
+  const { currentUser, logout } = useAuth()
+  const handleLogout = () => {
     logout()
   }
   return (
     <div className=''>
       <div className='laptop:hidden flex m-3'>
-      <FaBars onClick={toggleDropdown}  className='text-2xl my-auto mx-3'/>
-      <h2 className='text-4xl font-poppins mx-auto'>Gamess</h2>
+        <FaBars onClick={toggleDropdown} className='text-2xl my-auto mx-3 hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer' />
+        <a href="/" className='mx-auto'>
+          <h2 className='text-4xl font-poppins mx-auto hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>Gamess</h2>
+        </a>
       </div>
       <div className='p-3 pr-10 laptop:grid hidden grid-cols-7 '>
 
@@ -34,29 +36,29 @@ export default function Navbar({toggleDropdown}) {
           </a>
         </div>
         <div className="col-span-3">
-      <Searchbarmenu />
-      </div>
+          <Searchbarmenu />
+        </div>
 
-      <div  className="col-span-1"></div>
+        <div className="col-span-1"></div>
 
-      <div className='ml-auto my-auto col-span-2 content-center'>
-      {
-        currentUser?
-        <>
-          <a  href={`/profile/${currentUser.uid}`} ><img src={`${currentUser.photoId}`} alt="" /></a>
-          <button onClick={handleLogout}>Log out</button>
-        </>
-        :
-        <>
-          <a href='/login'>
-            <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101' >Log in</button>
-          </a>
-          <a href="/signUp">
-            <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101'>Register</button>
-          </a>
-        </>
-      }
-      </div>
+        <div className='ml-auto my-auto col-span-2 content-center'>
+          {
+            currentUser ?
+              <>
+                <a href={`/profile/${currentUser.uid}`} ><img src={`${currentUser.photoId}`} alt="" /></a>
+                <button onClick={handleLogout}>Log out</button>
+              </>
+              :
+              <>
+                <a href='/login'>
+                  <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101' >Log in</button>
+                </a>
+                <a href="/signUp">
+                  <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101'>Register</button>
+                </a>
+              </>
+          }
+        </div>
       </div>
     </div>
   )

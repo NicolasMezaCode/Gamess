@@ -14,26 +14,31 @@ export default function Dropdown({ isOpen, toggleDropdown }) {
       {isOpen && <div className='h-full w-full z-30 absolute top-0 left-0 bg-black bg-opacity-30 transition-all duration-300 ease-linear ' onClick={toggleDropdown}>
 
         <DpDrawer isOpen={isOpen} className='p-3 absolute z-40 top-0 h-screen w-1/2 marker:w-6/12 bg-white transition-all duration-300 ease-linear'>
-        <div className='w-full inline-flex hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>
-
+          <div className='w-full inline-flex hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>
+            <a href="/" className=''>
               <figure className=''>
                 <img className='' src={logo} alt="Website Logo " />
               </figure>
               <div className='my-auto mx-3 hover:scale-101'>
                 <h2 className='text-4xl font-poppins '>Gamess</h2>
               </div>
-            </div>
+            </a>
+          </div>
 
-          <Searchbarmenu/>
+          <Searchbarmenu />
 
           <div className='mx-auto my-10 content-center'>
-            <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101' >Log in</button>
-            <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101'>Register</button>
+            <a href="/Login">
+              <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101' >Log in</button>
+            </a>
+            <a href="/Signup">
+              <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101'>Register</button>
+            </a>
           </div>
 
         </DpDrawer>
 
       </div>}
-    </div>
+    </div >
   )
 }

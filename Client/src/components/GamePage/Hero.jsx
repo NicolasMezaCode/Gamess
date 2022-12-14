@@ -21,24 +21,24 @@ export default function Hero({ cover, rating, name, genres, platforms, engine })
                     </div>
                     <div className='mx-auto xl:w-140 backdrop-blur-xl bg-white/80 mobile:w-128 w-72 rounded-xl shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear '>
                         <div className='text-center'>
-                            <h2 className='mobile:py-12 pt-7 pb-2 px-4 mobile:text-5xl text-3xl'>{name}</h2>
+                            <h2 className='mobile:py-12 pt-7 pb-2 px-4 mobile:text-5xl text-3xl font-bold'>{name}</h2>
                             <span className='flex  items-center justify-center mt-3 mb-3'>
-                                <h4 className='font-poppins mr-1 text-2xl'>{formatedRating}</h4>
+                                <h4 className='font-poppins mr-1 text-2xl '>{formatedRating}</h4>
                                 <AiFillStar className='text-amber-600 w-7 h-auto' />
                             </span>
                         </div>
 
                         <div className=' xl:px-36 px-16 mobile:text-2xl text-xl'>
                             <ul className='grid grid-cols-2 min-h-full'>
-                                <li className='laptop:py-10 mobile:py-7 py-1 mobile:ml-0 -ml-10 mobile:no-underline overline'>Genres: </li>
+                                <li className='laptop:py-10 mobile:py-7 py-1 mobile:ml-0 -ml-10 mobile:no-underline overline font-bold'>Genres: </li>
                                 <ul className='laptop:py-10 mobile:py-7 py-1 mobile:mb-0 mb-3'>{genres ? genres.map((genre) => <li className='ml-1 mr-1' key={genre.id}>{genre.name}</li>) : null}</ul>
                             </ul>
                             <ul className='grid grid-cols-2 min-h-full'>
-                                <li className='laptop:py-10 mobile:py-7 py-1 mobile:ml-0 -ml-10 mobile:no-underline overline'>Platforms: </li>
+                                <li className='laptop:py-10 mobile:py-7 py-1 mobile:ml-0 -ml-10 mobile:no-underline overline font-bold'>Platforms: </li>
                                 <ul className='laptop:py-10 mobile:py-7 py-1 mobile:mb-0 mb-3 flex justify-between max-w-[10rem] flex-wrap '>{platforms ? platforms.map((platform) => <li key={platform.id} className=''>{platform.abbreviation}</li>) : null}  </ul>
                             </ul>
                             <ul className='grid grid-cols-2 min-h-full mobile:pb-0 pb-5'>
-                                <li className='laptop:py-10 mobile:py-7 py-1 mobile:ml-0 -ml-10 mobile:no-underline overline'>Engine: </li>
+                                <li className='laptop:py-10 mobile:py-7 py-1 mobile:ml-0 -ml-10 mobile:no-underline overline font-bold'>Engine: </li>
                                 <ul className='laptop:py-10 mobile:py-7 py-1 mobile:mb-0 mb-3 '>{engine ? engine.map((engine) => <li key={engine.id} className='ml-1 mr-1 h-fit'>{engine.name}</li>) : null} </ul>
                             </ul>
 
