@@ -32,19 +32,23 @@ export default function Game() {
       })
     }
     setUrls(imageUrls)
-  },[gameData])
-
-
-  useEffect(()=>{
+    
     let similarGames=[]
     if(gameData!=undefined){ 
       gameData.similar_games.map((similar)=>{
-        const id=similar.cover.id
-        similarGames.push(`https://images.igdb.com/igdb/image/upload/t_cover_big/${id}.jpg`)
+        const coverId=similar.cover.image_id
+        const id=similar.id
+        if(similarGames.length<=3){
+          similarGames.push({
+            id:id,
+            cover:`https://images.igdb.com/igdb/image/upload/t_cover_big/${coverId}.jpg`
+          })
+        }
       })
     }
     setSimilar(similarGames)
   },[gameData])
+
 
   return (
     <div className='py-1 flex flex-col gap-6'>

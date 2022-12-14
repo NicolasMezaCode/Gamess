@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 .env
-
+gamess-test-firebase-adminsdk-35v1m-c4e050efff.json
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

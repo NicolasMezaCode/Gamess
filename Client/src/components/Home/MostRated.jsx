@@ -5,12 +5,29 @@ import { getMostRated } from '../../helpers/getMostRated'
 import RatedGame from './RatedGame'
 export default function MostRated() {
   const [mostRated,setMostrated]=useState([])
+  const [isMobile,setIsMobile]=useState(false)
+  const handleResize=()=>{
+    if(window.innerWidth <= 1000){
+      setIsMobile(true)
+    }
+    else{
+      setIsMobile(false)
+    } 
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleResize)
+  })
   useEffect(()=>{
     const ratedGames=Promise.resolve(getMostRated())
     ratedGames.then(data=>{
+      if(isMobile){
+      setMostrated(data.slice(0,4))
+    }
+    else{
       setMostrated(data)
+    }
     })
-  },[])
+  },[isMobile])
   console.log("mostRated",mostRated)
   return (
     <div className='flex flex-col justify-center items-center'>

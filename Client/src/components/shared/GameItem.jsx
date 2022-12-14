@@ -6,7 +6,7 @@ export default function GameItem({cover,id,name,platforms,genres,rating}) {
   const stars=Math.round(rating)*5/100
   const formatedRating=stars.toFixed(1)
   return (
-    <div className='bg-darker-grey h-72 w-600 rounded-lg drop-shadow-sm flex justify-around'>
+    <div className='bg-darker-grey h-80 w-600 rounded-lg drop-shadow-sm flex justify-around'>
          <figure className='ml-9 mr-9 flex items-center'>
         <Link to={`/game/${id}`}>
           <img className='h-auto w-44' src={image} alt="cover of the games" />
@@ -24,11 +24,11 @@ export default function GameItem({cover,id,name,platforms,genres,rating}) {
         </span>
         <h3 className='font-semibold mb-1'>Genres:</h3>
         <div className='flex justify-center items-center flex-wrap min-w-[12.5rem]'>
-            {genres.map((genre)=><h4 className='ml-1 mr-1' key={genre.id}>{genre.name}</h4>)}
+            {genres?genres.map((genre)=><h4 className='ml-1 mr-1' key={genre.id}>{genre.name}</h4>):null}
         </div>
         <h3 className='font-semibold mb-1 mt-1'>Platforms:</h3>
         <div className='flex justify-between max-w-[10rem] flex-wrap'>
-            {platforms.map((platform)=><h4 key={platform.id} className='ml-1 mr-1 h-fit'>{platform.abbreviation}</h4>)}
+            {platforms?platforms.map((platform)=><h4 key={platform.id} className='ml-1 mr-1 h-fit'>{platform.abbreviation}</h4>):null}
         </div>
       </section>
     </div>
