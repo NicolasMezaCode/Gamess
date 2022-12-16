@@ -3,7 +3,6 @@ const axios=require('axios')
 
 const showSearch=async(req,res)=>{
     const name=req.params.name
-    console.log(name)
     await axios({
         url:"https://api.igdb.com/v4/games",
         method:"POST",
