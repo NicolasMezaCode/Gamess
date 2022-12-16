@@ -40,7 +40,6 @@ const showRecent=async(req,res)=>{
 }
 const showGamePage=async(req,res)=>{
     const id=req.params.id
-    console.log(id)
     await axios({
         url:"https://api.igdb.com/v4/games",
         method:"POST",
@@ -61,7 +60,6 @@ const showGamePage=async(req,res)=>{
 const showProfileGames=async(req,res)=>{
     const ids=req.body
     const str= `${ids}`;
-   console.log(str)
     await axios({
         url:"https://api.igdb.com/v4/games",
         method:"POST",
@@ -73,7 +71,6 @@ const showProfileGames=async(req,res)=>{
         data:`fields cover.*,name,id;where id=(${str});`
     })
     .then((response)=>{
-        console.log(response.data)
         res.json(response.data)
     })
     .catch((err)=>{
