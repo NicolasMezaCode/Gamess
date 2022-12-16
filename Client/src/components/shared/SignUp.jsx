@@ -26,18 +26,24 @@ export default function SignUp() {
     }, [error])
     const handleSubmit = async (e) => {
         e.preventDefault()
+        const nameNoSpace = inputName.current.value.replace(/\s/g, '')
         const user = {
-            username: inputName.current.value,
+            username: nameNoSpace,
             email: inputEmail.current.value,
             password: inputPassword.current.value,
-            photoId: `https://avatars.dicebear.com/api/bottts/${inputName.current.value}.svg`
+            photoId: `https://avatars.dicebear.com/api/bottts/${nameNoSpace}.svg`
         }
         if (user.username && user.email && user.password !== '' && user.password.length >= 6) {
-            setError('')
-            setLoading(true)
-            let signUp = await createUser(user)
-            await signup(user.username, signUp.uid, user.photoId)
-            navigate(`/`)
+            try{
+                setError('')
+                setLoading(true)
+                let signUp = await createUser(user)
+                await signup(user.username, signUp.uid, user.photoId)
+                navigate(`/`)
+            }
+            catch{
+                setError('Failed to create an account')
+            }
         }
         else (
             setError('Failed to create an account')

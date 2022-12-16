@@ -4,11 +4,14 @@ import Avatar from './Avatar'
 import Favorites from './Favorites'
 import { useParams } from "react-router-dom";
 import { getProfile } from '../../helpers/getProfile';
+import { useAuth } from '../../context/AuthContext'
 export default function Profile() {
+  const {currentUser}=useAuth()
   const params=useParams()
   const id=params.id
   const [profileData,setProfileData]=useState()
   const [avatar,setAvatar]=useState()
+  
   useEffect(() => {
     const gamePage=Promise.resolve(getProfile(id))
     gamePage.then(data=>{
@@ -26,7 +29,7 @@ export default function Profile() {
   return (
       <div className='p-10'>
         {avatar?<Avatar username={avatar.username} photo={avatar.photo} />:null}
-        <Favorites />
+          {profileData?<Favorites profileData={profileData} />:null}
       </div>
   )
 }

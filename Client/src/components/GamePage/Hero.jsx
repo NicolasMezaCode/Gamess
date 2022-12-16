@@ -1,12 +1,38 @@
-import { React, useState } from 'react'
+import { React, useState,useEffect } from 'react'
 import { AiFillStar, AiFillHeart } from 'react-icons/Ai'
-
-export default function Hero({ cover, rating, name, genres, platforms, engine }) {
+import {useAuth} from '../../context/AuthContext'
+export default function Hero({ cover, rating, name, genres, platforms, engine,id }) {
     const imageSmall = `https://images.igdb.com/igdb/image/upload/t_cover_big/${cover.image_id}.jpg`
     const image = `https://images.igdb.com/igdb/image/upload/t_1080p/${cover.image_id}.jpg`
     const stars = Math.round(rating) * 5 / 100
     const formatedRating = stars.toFixed(1)
-    const [likeColor, setLikeColor] = useState('grey');
+    const [likeColor, setLikeColor] = useState(false);
+    const[click,setClick]=useState(false)
+    const { currentUser,addGame } = useAuth()
+    useEffect(() => {
+        if(currentUser){
+          currentUser.games.map(game => {
+            if (game === id) {
+              setLikeColor(true)
+            }
+          })
+        }else{
+            console.log('no games')
+        }
+      }, [currentUser])
+      useEffect(() => {
+        if (likeColor&&click) {
+          addGame(id)
+        }
+      }, [likeColor])
+    const handleFavorite = () => {
+        if(likeColor){
+            setClick(false)
+          }else{
+            setLikeColor(true);
+            setClick(true)
+          }
+    }
     return (
         <div className='flex min-h-fit relative'>
             <div className='h-140 w-screen min-w-full  '>
@@ -43,11 +69,14 @@ export default function Hero({ cover, rating, name, genres, platforms, engine })
                             </ul>
 
                         </div>
-                        <div className=''>
+                        {currentUser?
+                            <div className=''>
                             <div className='pb-1'>
-                                <AiFillHeart onClick={() => setLikeColor('red')} color={likeColor} className='w-10 h-8 m-5 hover:text-red transition-all duration-300 ease-linear mx-auto' />
-                            </ div>
-                        </div>
+                                <AiFillHeart onClick={handleFavorite} color={likeColor||click?'red':'grey'} className='w-10 h-8 m-5 hover:text-red transition-all duration-300 ease-linear mx-auto' />
+                            </div>
+                            </div>
+                            :null
+                        }
                     </div>
                 </div>
 

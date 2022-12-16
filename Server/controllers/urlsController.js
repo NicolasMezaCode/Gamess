@@ -58,9 +58,32 @@ const showGamePage=async(req,res)=>{
         console.log(err)
     })
 }
+const showProfileGames=async(req,res)=>{
+    const ids=req.body
+    const str= `${ids}`;
+   console.log(str)
+    await axios({
+        url:"https://api.igdb.com/v4/games",
+        method:"POST",
+        headers:{
+            Accept: "application/json",
+            "Client-ID":process.env.CLIENT_ID,
+            Authorization: `Bearer ${process.env.AUTHORIZATION}`,
+        },
+        data:`fields cover.*,name,id;where id=(${str});`
+    })
+    .then((response)=>{
+        console.log(response.data)
+        res.json(response.data)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+}
 
 module.exports={
     showMostRated,
     showRecent,
     showGamePage,
+    showProfileGames,
 }

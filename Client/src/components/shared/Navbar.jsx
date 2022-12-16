@@ -5,7 +5,7 @@ import { FaBars } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'
 
 export default function Navbar({ toggleDropdown }) {
-  const { currentUser, logout } = useAuth()
+  const { currentUser, logout} = useAuth()
   const handleLogout = () => {
     logout()
   }
@@ -43,7 +43,7 @@ export default function Navbar({ toggleDropdown }) {
 
         <div className='ml-auto my-auto col-span-2 content-center'>
           {
-            currentUser ?
+             currentUser ?
               <>
                 <a href={`/profile/${currentUser.uid}`} ><img src={`${currentUser.photoId}`} alt="" /></a>
                 <button onClick={handleLogout}>Log out</button>

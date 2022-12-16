@@ -52,7 +52,7 @@ export default function Game() {
 
   return (
     <div className='py-1 flex flex-col gap-6'>
-      {gameData?<Hero name={gameData.name} cover={gameData.cover} genres={gameData.genres} platforms={gameData.platforms} rating={gameData.aggregated_rating} summary={gameData.summary} engine={gameData.game_engines}  />:null}
+      {gameData?<Hero name={gameData.name} cover={gameData.cover} genres={gameData.genres} platforms={gameData.platforms} rating={gameData.aggregated_rating} summary={gameData.summary} engine={gameData.game_engines} id={gameData.id} />:null}
     
       {gameData?<Summary summary={gameData.summary} />:null}
 
