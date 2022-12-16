@@ -2,7 +2,7 @@ import React from "react";
 
 
 export default function Avatar({username,photo}) {
-
+  const Avatar = `https://avatars.dicebear.com/api/bottts/${username}.svg`
   return (
     <div>
       <div className="p-10 max-w-xl mx-auto rounded-3xl bg-medium-grey shadow-xl mt-7 mb-24">
@@ -16,7 +16,7 @@ export default function Avatar({username,photo}) {
         </div>
         <div className="">
           <figure className="mx-auto">
-            <img src={`${photo}`} alt="User avatar" className="avatar-image"/>
+            <img src={Avatar} alt="User avatar" className="avatar-image"/>
           </figure>
         </div>
       </div>

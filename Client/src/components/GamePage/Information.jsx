@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Information({ keywords, perspective, release, modes, }) {
+export default function Information({ keywords, perspective, release, engine, }) {
     return (
         <div className='px-12 text-4xl'>
             <div className='my-12'>
@@ -11,8 +11,8 @@ export default function Information({ keywords, perspective, release, modes, }) 
                             <ul className='py-10 '> {perspective ? perspective.map((perspective) => <li className='ml-1 mr-1' key={perspective.id}>{perspective.name}</li>) : null}</ul>
                         </ul>
                         <ul className='grid  grid-cols-2 min-h-full '>
-                            <li className='py-10 font-bold'>Game Modes: </li>
-                            <ul className='py-10 '> {modes ? modes.map((modes) => <li className='' key={modes.id}>{modes.name}</li>) : null} </ul>
+                            <li className='py-10 font-bold'>Engine: </li>
+                            <ul className='py-10 '> {engine ? engine.map((engine) => <li className='' key={engine.id}>{engine.name}</li>) : null} </ul>
                         </ul>
                         <ul className='grid  grid-cols-2 min-h-full'>
                             <li className='py-10 font-bold'>Release Dates: </li>

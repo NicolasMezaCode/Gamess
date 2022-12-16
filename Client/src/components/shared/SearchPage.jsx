@@ -75,7 +75,7 @@ export default function SearchPage() {
             }
             {menu === "Game Lists" &&
                 <div className='flex flex-col justify-center items-center pb-16'>
-                    <section className='grid gap-10 grid-cols-2 grid-rows-3 place-items-center mt-16 '>
+                    <section className='grid gap-5 laptop:grid-cols-2 grid-cols-1 tablet:grid-rows-3 grid-rows-auto place-items-center mt-16 '>
                         {search.map((game) => <GameItem key={game.id} cover={game.cover} id={game.id} name={game.name} platforms={game.platforms} genres={game.genres} rating={game.aggregated_rating} />)}
                         
                     </section>

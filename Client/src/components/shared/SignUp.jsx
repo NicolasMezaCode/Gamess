@@ -1,9 +1,6 @@
-import React from 'react'
-import { useRef } from 'react'
+import  { React, useEffect, useState, useRef } from 'react'
 import { createUser } from '../../helpers/createUser'
 import { useAuth } from '../../context/AuthContext'
-import { useState } from 'react'
-import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ImOmega } from 'react-icons/im'
 import { GiWolfHead } from 'react-icons/gi'
@@ -117,7 +114,7 @@ export default function SignUp() {
                                     <li className='flex py-2'>
                                         < GiWolfHead />
                                         <div className='pl-5'>
-                                            <p>Keep an eye on the last releases of games.</p>
+                                            <li>- Keep an eye on the last releases of games.</li>
                                         </div>
                                     </li>
                                     <li className='flex py-2'>

@@ -1,7 +1,7 @@
 import { React, useState,useEffect } from 'react'
 import { AiFillStar, AiFillHeart } from 'react-icons/Ai'
 import {useAuth} from '../../context/AuthContext'
-export default function Hero({ cover, rating, name, genres, platforms, engine,id }) {
+export default function Hero({ cover, rating, name, genres, platforms, modes,id }) {
     const imageSmall = `https://images.igdb.com/igdb/image/upload/t_cover_big/${cover.image_id}.jpg`
     const image = `https://images.igdb.com/igdb/image/upload/t_1080p/${cover.image_id}.jpg`
     const stars = Math.round(rating) * 5 / 100
@@ -64,8 +64,8 @@ export default function Hero({ cover, rating, name, genres, platforms, engine,id
                                 <ul className='mobile:py-7 py-1 mobile:mb-0 mb-3 flex justify-between max-w-[10rem] flex-wrap '>{platforms ? platforms.map((platform) => <li key={platform.id} className=''>{platform.abbreviation}</li>) : null}  </ul>
                             </ul>
                             <ul className='grid grid-cols-2 min-h-full mobile:pb-0 pb-5'>
-                                <li className='mobile:py-7 py-1 mobile:ml-0 -ml-10 mobile:no-underline overline font-bold'>Engine: </li>
-                                <ul className='mobile:py-7 py-1 mobile:mb-0 mb-3 '>{engine ? engine.map((engine) => <li key={engine.id} className='ml-1 mr-1 h-fit'>{engine.name}</li>) : null} </ul>
+                                <li className='mobile:py-7 py-1 mobile:ml-0 -ml-10 mobile:no-underline overline font-bold'>Game Modes: </li>
+                                <ul className='mobile:py-7 py-1 mobile:mb-0 mb-3 '>{modes ? modes.map((modes) => <li key={modes.id} className='ml-1 mr-1 h-fit'>{modes.name}</li>) : null} </ul>
                             </ul>
 
                         </div>

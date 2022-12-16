@@ -48,7 +48,7 @@ export default function Favorites({profileData}) {
             <div className=" max-w-screen-xl mx-auto rounded-md bg-medium-grey shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear min-h-fit mt-7 mb-24">
                 <h3 className="py-8 text-center text-white font-poppins mr-1 text-4xl">Favorite Games</h3>
                 <div className=" pb-7">
-                    <div className=" grid grid-col-4 grid-flow-col gap-4 ml-9 ">
+                    <div className="  grid laptop:grid-cols-4 tablet:grid-cols-3 mobile:grid-cols-2 grid-rows-auto gap-4 mx-9 ">
                         {covers?covers.map((game)=>{return<FavoriteCard key={game.id} cover={game.cover} id={game.id} handleDelete={handleDelete} name={game.name} />}):null}
                     </div>
                 </div>
