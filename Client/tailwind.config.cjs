@@ -30,7 +30,8 @@ module.exports = {
         'wierdo-orange': '#FF843A',
       },
       boxShadow: {
-        '3xl': '0 6px 6px  rgba(0, 0, 0, 0.35)'
+        '3xl': '0 6px 6px  rgba(0, 0, 0, 0.35)',
+        'button-shadow': ' 0px 2px 8px 0px  rgba(99, 99, 99, 0.2)',
       },
       lineHeight: {
         '11': '3rem',

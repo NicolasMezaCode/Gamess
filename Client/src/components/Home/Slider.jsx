@@ -15,7 +15,6 @@ export default function Slider() {
     useEffect(()=>{
             const interval=setInterval(()=>{
                 changeImage()
-                console.log(counter)
             },5000)
             return ()=>clearInterval(interval)
     },[counter])

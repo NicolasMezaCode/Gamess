@@ -9,3 +9,12 @@ export const getProfile=async(id)=>{
     }
     catch(err){console.log(err)}
 }
+export const getProfileGames=async(ids)=>{
+    try{
+        const res=await axios.post(import.meta.env.VITE_API_PROFILE_GAMES,ids);
+        const profileData=await res.data
+        console.log("profileData",profileData)
+        return profileData
+    }
+    catch(err){console.log(err)}
+}

@@ -3,52 +3,76 @@ import {useState,useContext} from 'react'
 import Cookies from 'js-cookie'
 import { useEffect } from 'react'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../config/firebase'
+import { auth,db } from '../config/firebase'
 import{useNavigate} from 'react-router-dom'
-
-
+import {getDocs,getDoc, doc,collection, updateDoc, arrayUnion, addDoc,query,where } from "firebase/firestore";
 const AuthContext=React.createContext()
-
 export function useAuth(){
     return useContext(AuthContext)
 }
-
 export default function AuthProvider({children}){
     const [currentUser,setCurrentUser]=useState()
+
     const navigate=useNavigate()
 
-    const readCookie=()=>{
+    const readCookie=async()=>{
         const user=Cookies.get('user')
         if(user){
-            setCurrentUser(current=>current=JSON.parse(user))
-            console.log(JSON.parse(user))
+            const userParsed=JSON.parse(user)
+            const docRef = doc(db, "user", `${userParsed.dbId}`);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                console.log("Document data:", docSnap.data().gameIds);
+                userParsed.games=docSnap.data().gameIds
+                setCurrentUser(current=>current=userParsed)
+              } else {
+                console.log("No such document!");
+              }
         }
     }
     useEffect(() => {
         readCookie()
     }, [])
 
-    function signup(username,uid,photoId){
+    async function signup(username,uid,photoId){
+        const createDoc= await addDoc(collection(db,"user"),{
+            gameIds:[],
+            uid:uid,
+        })
+        const dbId=createDoc.id
         const user={
-            username,uid,photoId
+            username:username,
+            uid:uid,
+            photoId:photoId,
+            dbId:dbId,
+            games:[],
         }
         setCurrentUser(current=>current=user)
         Cookies.set('user',JSON.stringify(user))
     }
-    function loginUser(email,password){
+    async function loginUser(email,password){
+        const docRef=collection(db,"user")
         const auth = getAuth();
             signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
+                .then(async(userCredential) => {
                     const userCred = userCredential.user;
-                    const user={
+                    const q=query(docRef,where("uid","==",userCred.uid))
+                    const querySnapshot = await getDocs(q);
+                    let dbId;
+                    querySnapshot.forEach((doc) => {
+                        return dbId=doc.id
+                    })
+                    const userLogin={
                         username:userCred.displayName,
                         uid:userCred.uid,
                         photoId:userCred.photoURL,
+                        dbId:dbId,
+                        games:[]
                     }
-                    Cookies.set('user',JSON.stringify(user))
-                    setCurrentUser(current=>current=user)
+                    setCurrentUser(current=>current=userLogin)
+                    Cookies.set('user',JSON.stringify(userLogin))
                     navigate('/')
-                    window.location.reload()
+
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -64,8 +88,16 @@ export default function AuthProvider({children}){
         return auth.signOut()
     }
 
+    async function addGame(gameId){
+        const userRef=doc(db,"user",currentUser.dbId)
+            setCurrentUser(current=>current={...current,games:[...current.games,gameId]})
+            await updateDoc(userRef,{
+                gameIds:arrayUnion(gameId)
+            })
+    }
+
     const value={
-        currentUser,signup,loginUser,logout
+        currentUser,signup,loginUser,logout,addGame
     }
   return (
     <AuthContext.Provider value={value}>
