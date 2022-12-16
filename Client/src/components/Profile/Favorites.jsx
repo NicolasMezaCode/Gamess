@@ -8,13 +8,11 @@ export default function Favorites({profileData}) {
     const [profileGames,setProfileGames]=useState()
     const [covers,setCovers]=useState([])
     const [docId,setDocId]=useState()
-    console.log('profileData',profileData)
 
     useEffect(() => { 
              const documentid=Promise.resolve(getDocumentId(profileData.uid))
              
             documentid.then(data=>{
-                console.log("collection",data)
                 setProfileGames(current=>current=data)
             })
     }, [])
@@ -22,15 +20,12 @@ export default function Favorites({profileData}) {
         if(profileGames != undefined){
             const gamePage=Promise.resolve(getProfileGames(profileGames))
             gamePage.then(data=>{
-                console.log('things',data)
                 setCovers(data)
             })
         }
     }, [profileGames])
-    console.log('covers',covers)
 
     const getDocumentId=async(uid)=>{
-        console.log('uid',uid)
         const docRef = collection(db, "user");
         const q=query(docRef,where("uid","==",`${uid}`))
         const querySnapshot = await getDocs(q);

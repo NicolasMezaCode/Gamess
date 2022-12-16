@@ -21,7 +21,6 @@ export default function SearchPage() {
         searchGames.then(data => {
             setSearch(data)
         })
-        console.log(search)
     }, [])
 
     const handleItemClick = (e, { name }) => {
@@ -80,7 +79,6 @@ export default function SearchPage() {
                         {search.map((game) => <GameItem key={game.id} cover={game.cover} id={game.id} name={game.name} platforms={game.platforms} genres={game.genres} rating={game.aggregated_rating} />)}
                         
                     </section>
-
                 </div>
             }
         </main>

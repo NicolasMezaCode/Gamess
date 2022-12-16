@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { BsFillXCircleFill } from 'react-icons/Bs'
 export default function FavoriteCard({cover,id,handleDelete,name}) {
   const image=`https://images.igdb.com/igdb/image/upload/t_cover_big/${cover.image_id}.jpg`
-  console.log('is rendering')
   const erraseId=()=>{
     handleDelete(id)
   }

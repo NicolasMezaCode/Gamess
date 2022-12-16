@@ -22,11 +22,9 @@ export default function AuthProvider({children}){
             const docRef = doc(db, "user", `${userParsed.dbId}`);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
-                console.log("Document data:", docSnap.data().gameIds);
                 userParsed.games=docSnap.data().gameIds
                 setCurrentUser(current=>current=userParsed)
               } else {
-                console.log("No such document!");
               }
         }
     }
@@ -77,7 +75,6 @@ export default function AuthProvider({children}){
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
-                    console.log(errorCode,errorMessage)
                 });
         return auth
     }
