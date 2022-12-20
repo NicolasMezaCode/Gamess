@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from './react'
 import { Menu } from 'semantic-ui-react'
 import { getSearch } from '../../helpers/getSearch'
 import { getRecent } from '../../helpers/getRecent'
