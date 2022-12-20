@@ -1,5 +1,5 @@
 import React from 'react';
-import {AiFillLinkedin,AiFillGithub} from 'react-icons/Ai'
+import {AiFillLinkedin,AiFillGithub} from '/react-icons/Ai'
 const Footer = () => {
   return (
     <footer className="text-not-white bg-zinc-800 mx-auto w-full max-w-container px-1 sm:px-6 lg:px-8">
