@@ -1,12 +1,11 @@
 import React from 'react'
 import { useRef, useState, useEffect } from 'react'
-import { loginUser } from '../../helpers/loginUser'
 import { useAuth } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
-import { ImOmega } from 'react-icons/im'
-import { GiWolfHead } from 'react-icons/gi'
-import { SiSkyliner } from 'react-icons/si'
+import { AiFillSave} from 'react-icons/Ai'
 import { SlArrowRight } from 'react-icons/sl'
+import {FaEye} from 'react-icons/fa'
+import {TbOmega} from 'react-icons/tb'
 
 export default function Login() {
     const navigate = useNavigate()
@@ -87,20 +86,20 @@ export default function Login() {
                             <h2 className='pt-5 pb-4' >Here are some of the benefits you’ll enjoy:</h2>
                             <div className='text-xl'>
                                 <ul>
-                                    <li className='flex py-2'>
-                                        < ImOmega />
+                                    <li className='flex items-center py-2'>
+                                        < AiFillSave />
                                         <div className='pl-5'>
                                             <p>Check and save your favorite games.</p>
                                         </div>
                                     </li>
-                                    <li className='flex py-2'>
-                                        < GiWolfHead />
+                                    <li className='flex items-center  py-2'>
+                                        < FaEye />
                                         <div className='pl-5'>
                                             <p>Keep an eye on the last releases of games.</p>
                                         </div>
                                     </li>
-                                    <li className='flex py-2'>
-                                        < SiSkyliner />
+                                    <li className='flex items-center py-2'>
+                                        < TbOmega />
                                         <div className='pl-5'>
                                             <p>Discover everything about a game.</p>
                                         </div>

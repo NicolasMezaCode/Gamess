@@ -37,7 +37,7 @@ export default function RecentCard({ cover, id, name, platforms, genres, rating 
 
   }
   return (
-    <div className='bg-darker-grey tablet:my-0  my-7 tablet:h-96 h-80 laptop:w-600 tablet:w-128 w-full rounded-lg drop-shadow-md flex justify-around hover:scale-101 hover:drop-shadow-lg transition-all duration-300 ease-linear'>
+    <div className='bg-darker-grey tablet:my-0  my-8 tablet:h-96 h-80 laptop:w-600 tablet:w-128 w-full rounded-lg drop-shadow-md flex justify-around hover:scale-101 hover:drop-shadow-lg transition-all duration-300 ease-linear'>
       <figure className='mobile:mx-3 mx-1 flex items-center'>
         <Link to={`/game/${id}`}>
           <img className='h-auto w-56 rounded-lg drop-shadow-lg transition-all duration-300 ease-linear opacity-85 hover:opacity-100' src={image} alt="cover of the games" />
