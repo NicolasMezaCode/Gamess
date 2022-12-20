@@ -2,10 +2,10 @@ import React from 'react'
 import { useRef, useState, useEffect } from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
-import { AiFillSave} from '/react-icons/Ai'
-import { SlArrowRight } from '/react-icons/sl'
-import {FaEye} from '/react-icons/fa'
-import {TbOmega} from '/react-icons/tb'
+import { AiFillSave} from 'react-icons/Ai'
+import { SlArrowRight } from 'react-icons/sl'
+import {FaEye} from 'react-icons/fa'
+import {TbOmega} from 'react-icons/tb'
 
 export default function Login() {
     const navigate = useNavigate()

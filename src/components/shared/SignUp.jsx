@@ -2,10 +2,10 @@ import  { React, useEffect, useState, useRef } from 'react'
 import { createUser } from '../../helpers/createUser'
 import { useAuth } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
-import { AiFillSave} from '/react-icons/Ai'
-import { SlArrowRight } from '/react-icons/sl'
-import {TbOmega} from '/react-icons/tb'
-import {FaEye} from '/react-icons/fa'
+import { AiFillSave} from 'react-icons/Ai'
+import { SlArrowRight } from 'react-icons/sl'
+import {TbOmega} from 'react-icons/tb'
+import {FaEye} from 'react-icons/fa'
 
 export default function SignUp() {
     const navigate = useNavigate()

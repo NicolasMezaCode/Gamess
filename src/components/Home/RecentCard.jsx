@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { React, useState } from 'react'
-import { AiFillStar, AiFillHeart } from '/react-icons/Ai'
+import { AiFillStar, AiFillHeart } from 'react-icons/Ai'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 
