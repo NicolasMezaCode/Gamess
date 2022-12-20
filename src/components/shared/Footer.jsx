@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsLinkedin, BsGithub } from 'react-icons/Bs'
+// import { BsLinkedin, BsGithub } from 'react-icons/Bs'
 const Footer = () => {
   return (
     <footer className="text-not-white bg-zinc-800 mx-auto w-full max-w-container px-1 sm:px-6 lg:px-8">
@@ -10,21 +10,21 @@ const Footer = () => {
 
           <div className='grid grid-rows-2'>
             <a href="https://www.linkedin.com/in/gabriel-soares-802710176/" target="_blank" className='mobile:text-lg text-sm  transition-all duration-300 ease-linear hover:text-wierdo-orange'>Gabriel </a>
-            <BsLinkedin className='text-wierdo-orange mobile:w-5 w-3 h-auto my-1 mx-auto' />
+            {/* <BsLinkedin className='text-wierdo-orange mobile:w-5 w-3 h-auto my-1 mx-auto' /> */}
           </div>
 
           <div className="h-4 w-px bg-not-white"></div>
 
           <div className='grid grid-rows-2'>
             <a href="https://www.linkedin.com/in/nicolas-meza-169378201/" target="_blank" className='mobile:text-lg text-sm transition-all duration-300 ease-linear hover:text-wierdo-orange'>Nicolas</a>
-            <BsLinkedin className='text-wierdo-orange mobile:w-5 w-3 h-auto my-1 mx-auto' />
+            {/* <BsLinkedin className='text-wierdo-orange mobile:w-5 w-3 h-auto my-1 mx-auto' /> */}
           </div>
 
           <div className="h-4 w-px bg-not-white"></div>
 
           <div className='grid grid-rows-2'>
             <a href="https://github.com/MendigoPower/final-project" target="_blank" className='mobile:text-lg text-sm transition-all duration-300 ease-linear hover:text-wierdo-orange'>Github</a>
-            <BsGithub className='text-wierdo-orange mobile:w-5 w-3 h-auto my-1 mx-auto' />
+            {/* <BsGithub className='text-wierdo-orange mobile:w-5 w-3 h-auto my-1 mx-auto' /> */}
           </div>
 
         </div>
