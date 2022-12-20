@@ -10,13 +10,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       //add react-icons to external
-      external: ['react-icons'],
-
-      output: {
-        //add react-icons to globals
-        globals: { 'react-icons': 'react-icons' },
-    
-      },
+      external: ['react-icons/*', 'react-router-dom'],
     },
   },
 })
