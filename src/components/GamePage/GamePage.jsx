@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { useEffect, useState } from "./react";
+import React, { useEffect, useState } from "react";
 import Summary from './Summary'
 import Hero from './Hero'
 import HowLong from './HowLong'

@@ -1,4 +1,4 @@
-import React from "./react";
+import React from "react";
 import "./carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 export default function Gallery({urls}) {

@@ -1,4 +1,4 @@
-import { React, useState,useEffect } from './react'
+import { React, useState,useEffect } from 'react'
 import { AiFillStar, AiFillHeart } from 'react-icons/Ai'
 import {useAuth} from '../../context/AuthContext'
 export default function Hero({ cover, rating, name, genres, platforms, modes,id }) {
