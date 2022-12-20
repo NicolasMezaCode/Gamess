@@ -1,7 +1,7 @@
 import React from 'react'
 import Searchbarmenu from './Searchbar'
 import logo from '../../assets/game-icons_game-console.svg'
-import { FaBars } from 'react-icons/fa'
+import { FaBars } from '/react-icons/fa'
 import { useAuth } from '../../context/AuthContext'
 
 export default function Navbar({ toggleDropdown }) {

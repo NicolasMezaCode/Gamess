@@ -1,5 +1,5 @@
 import React from 'react'
-import {AiFillStar} from 'react-icons/Ai'
+import {AiFillStar} from '/react-icons/Ai'
 import {Link} from 'react-router-dom'
 export default function GameItem({cover,id,name,platforms,genres,rating}) {
   const image=`https://images.igdb.com/igdb/image/upload/t_cover_big/${cover.image_id}.jpg`
