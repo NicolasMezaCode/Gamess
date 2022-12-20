@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Menu } from 'semantic-ui-react'
 import { getSearch } from '../../helpers/getSearch'
 import { getRecent } from '../../helpers/getRecent'
-import { useParams } from "/react-router-dom";
+import { useParams } from "react-router-dom";
 import { AiFillStar } from '/react-icons/Ai'
 import GameItem from "./GameItem"
 export default function SearchPage() {
