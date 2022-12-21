@@ -35,6 +35,7 @@ export default function SignUp() {
                 setError('')
                 setLoading(true)
                 let signUp = await createUser(user)
+                console.log(signUp)
                 await signup(user.username, signUp.uid, user.photoId)
                 navigate(`/`)
             }
