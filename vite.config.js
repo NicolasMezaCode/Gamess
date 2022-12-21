@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import reactRouter from '@vitejs/plugin-react-router'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,5 +11,5 @@ export default defineConfig({
       external: ['react-icons/Ai','react-icons/Bs' ,'./react-router-dom', './react-router']
     }
   },
-  plugins: [react(), reactRouter() ],
+  plugins: [react()],
 })
