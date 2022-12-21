@@ -9,7 +9,6 @@ import SignUp from './components/shared/SignUp'
 import AuthProvider from './context/AuthContext'
 import Profile from './components/Profile/Profile'
 import Login from './components/shared/Login'
-
 function App() {
   return (
     <div className="bg-not-white flex flex-col">
