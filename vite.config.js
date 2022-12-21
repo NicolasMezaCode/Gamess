@@ -7,7 +7,7 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      external: ['./react-icons/*','./react-router-dom', './react-router']
+      external: ['./react-icons/Ai','./react-router-dom', './react-router']
     }
   },
   plugins: [react()],
