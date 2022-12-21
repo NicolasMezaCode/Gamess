@@ -1,5 +1,5 @@
 import { React, useState,useEffect } from 'react'
-import { AiFillStar, AiFillHeart } from 'react-icons/Ai'
+import { AiFillStar, AiFillHeart } from './node_modules/react-icons/ai'
 import {useAuth} from '../../context/AuthContext'
 export default function Hero({ cover, rating, name, genres, platforms, modes,id }) {
     const imageSmall = `https://images.igdb.com/igdb/image/upload/t_cover_big/${cover.image_id}.jpg`
