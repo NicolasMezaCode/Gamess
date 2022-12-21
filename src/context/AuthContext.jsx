@@ -74,6 +74,7 @@ export default function AuthProvider({children}){
                 })
                 .catch((error) => {
                     const errorCode = error.code;
+                    console.log(error)
                     const errorMessage = error.message;
                 });
         return auth
