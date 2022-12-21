@@ -29,7 +29,6 @@ export default function Login() {
             try {
                 setError('')
                 setLoading(true)
-                console(await loginUser(user.email, user.password))
                 await loginUser(user.email, user.password)
 
             }
