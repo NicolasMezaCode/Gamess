@@ -3,7 +3,7 @@ import { Menu } from 'semantic-ui-react'
 import { getSearch } from '../../helpers/getSearch'
 import { getRecent } from '../../helpers/getRecent'
 import { useParams } from "react-router-dom";
-import { AiFillStar } from 'react-icons/Ai'
+import { AiFillStar } from './node_modules/react-icons/ai'
 import GameItem from "./GameItem"
 export default function SearchPage() {
     const [menu, setMenu] = useState("Game Lists")
