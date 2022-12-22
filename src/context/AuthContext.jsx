@@ -37,6 +37,7 @@ export default function AuthProvider({children}){
             gameIds:[],
             uid:uid,
         })
+        console.log(createDoc)
         const dbId=createDoc.id
         const user={
             username:username,
@@ -71,7 +72,6 @@ export default function AuthProvider({children}){
                     setCurrentUser(current=>current=userLogin)
                     Cookies.set('user',JSON.stringify(userLogin))
                     navigate('/')
-
                 })
                 .catch((error) => {
                     const errorCode = error.code;
