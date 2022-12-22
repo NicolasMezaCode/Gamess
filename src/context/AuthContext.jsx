@@ -57,6 +57,7 @@ export default function AuthProvider({children}){
                     const userCred = userCredential.user;
                     const q=query(docRef,where("uid","==",userCred.uid))
                     const querySnapshot = await getDocs(q);
+                    console.log('query',querySnapshot)
                     let dbId;
                     querySnapshot.forEach((doc) => {
                         return dbId=doc.id
