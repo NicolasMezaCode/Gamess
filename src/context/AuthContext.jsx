@@ -53,10 +53,8 @@ export default function AuthProvider({children}){
         const auth = getAuth();
             signInWithEmailAndPassword(auth, email, password)
                 .then(async(userCredential) => {
-                    console.log(userCredential)
                     const userCred = userCredential.user;
                     const q=query(docRef,where("uid","==",userCred.uid))
-                    console.log('q')
                     const querySnapshot = await getDocs(q);
                     console.log('query',querySnapshot)
                     let dbId;
