@@ -3,7 +3,7 @@ import {useState,useContext} from 'react'
 import Cookies from 'js-cookie'
 import { useEffect } from 'react'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { auth,db } from '../config/firebase'
+import { auth,db } from '../config/firebase.js'
 import{useNavigate} from 'react-router-dom'
 import {getDocs,getDoc, doc,collection, updateDoc, arrayUnion, addDoc,query,where } from "firebase/firestore";
 const AuthContext=React.createContext()
@@ -53,6 +53,7 @@ export default function AuthProvider({children}){
         const auth = getAuth();
             signInWithEmailAndPassword(auth, email, password)
                 .then(async(userCredential) => {
+                    console.log(userCredential)
                     const userCred = userCredential.user;
                     const q=query(docRef,where("uid","==",userCred.uid))
                     const querySnapshot = await getDocs(q);
