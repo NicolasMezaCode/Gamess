@@ -4,7 +4,6 @@ import { Carousel } from 'react-responsive-carousel';
 export default function Gallery({urls}) {
   return (
     <Carousel autoPlay interval="5000" transitionTime="1000" infiniteLoop className="drop-shadow-xl rounded-md">
-
     <div>
         <img src={`${urls[0]}`} alt="" />
     </div>
