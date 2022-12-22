@@ -56,7 +56,6 @@ export default function AuthProvider({children}){
                     const userCred = userCredential.user;
                     const q=query(docRef,where("uid","==",userCred.uid))
                     const querySnapshot = await getDocs(q);
-                    console.log('query',querySnapshot)
                     let dbId;
                     querySnapshot.forEach((doc) => {
                         return dbId=doc.id
@@ -75,7 +74,6 @@ export default function AuthProvider({children}){
                 })
                 .catch((error) => {
                     const errorCode = error.code;
-                    console.log(error)
                     const errorMessage = error.message;
                 });
         return auth
