@@ -47,6 +47,7 @@ export default function AuthProvider({children}){
         }
         setCurrentUser(current=>current=user)
         Cookies.set('user',JSON.stringify(user))
+        navigate('/')
     }
     async function loginUser(email,password){
         const docRef=collection(db,"user")
