@@ -37,8 +37,7 @@ export default function AuthProvider({children}){
             gameIds:[],
             uid:uid,
         })
-        console.log(createDoc)
-        const dbId=createDoc.id
+        const dbId= await createDoc.id
         const user={
             username:username,
             uid:uid,
