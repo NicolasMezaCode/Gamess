@@ -14,7 +14,8 @@ We use Figma to the design all the website and the functionality.
 
 ![image](https://user-images.githubusercontent.com/81392888/211680942-632da677-8023-448b-af99-2d20cb7c00dc.png)
 
-
+# Server Repository
+https://github.com/NicolasMezaCode/Gamess-Server
 # User Stories
 ***
 * As a user, i want to search the game that i want to see the description, genre, reviews and where to buy;
