@@ -1,5 +1,18 @@
-# Final-project
-Final project for the Web Developer program at Cornerstone
+# Gamess 
+Is a project where you can find and look all your favorite games using the IGDB database.
+
+![image](https://user-images.githubusercontent.com/81392888/211680474-b25d8487-0c85-43c1-91cc-c9a3b2ee8d41.png)
+
+
+# Technologies.
+
+![image](https://user-images.githubusercontent.com/81392888/211679711-a4e715f3-1a1c-4f5e-bbd7-8cfb9d8b1e28.png)
+
+# Design
+
+We use Figma to the design all the website and the functionality.
+
+![image](https://user-images.githubusercontent.com/81392888/211680942-632da677-8023-448b-af99-2d20cb7c00dc.png)
 
 
 # User Stories
