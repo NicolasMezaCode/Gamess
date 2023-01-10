@@ -8,6 +8,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       external: ['./react-router-dom', './react-router']
+      
     }
   },
   plugins: [react()],
