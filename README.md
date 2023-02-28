@@ -1,5 +1,5 @@
 # Gamess 
-Is a project where you can find and look all your favorite games using the IGDB database.
+Is a team project that where you can find and look all your favorite games using the IGDB database and firebase for the authentication and storing the user data you can try it by using this user:admin@admin.com password:admin1234.
 
 ![image](https://user-images.githubusercontent.com/81392888/211680474-b25d8487-0c85-43c1-91cc-c9a3b2ee8d41.png)
 
