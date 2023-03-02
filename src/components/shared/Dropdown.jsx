@@ -15,9 +15,7 @@ export default function Dropdown({ isOpen, toggleDropdown }) {
 
   return (
     <div>
-      {isOpen && <div className='h-full w-full z-30 absolute top-0 left-0 bg-black bg-opacity-30 transition-all duration-300 ease-linear ' onClick={toggleDropdown}>
-
-
+      {isOpen && <div className='h-full w-full z-30 absolute top-0 left-0 bg-black bg-opacity-30 transition-all duration-300 ease-linear '>
 
         <DpDrawer isOpen={isOpen} className='p-3 absolute z-40 top-0 h-screen w-1/2 marker:w-6/12 bg-white transition-all duration-300 ease-linear'>
         
@@ -32,6 +30,7 @@ export default function Dropdown({ isOpen, toggleDropdown }) {
               </a>
             </div>
             <Searchbarmenu />
+        
           {
             currentUser ?
               <>
@@ -55,13 +54,13 @@ export default function Dropdown({ isOpen, toggleDropdown }) {
                 </a>
               </>
           }
-
-
-
-  
+              < button className='py-2 px-9 mx-5 rounded-md text-white bg-red-400 opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101 mt-3' onClick={toggleDropdown}>
+              Close
+            </button>
         </DpDrawer>
 
       </div>}
+      
     </div >
   )
 }
