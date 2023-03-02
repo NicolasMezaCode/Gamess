@@ -20,7 +20,18 @@ export default function Dropdown({ isOpen, toggleDropdown }) {
 
 
         <DpDrawer isOpen={isOpen} className='p-3 absolute z-40 top-0 h-screen w-1/2 marker:w-6/12 bg-white transition-all duration-300 ease-linear'>
-
+        
+          <div className='my-4 w-fit mx-auto hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>
+              <a href="/" className='flex '>
+                <figure className=''>
+                  <img className='' src={logo} alt="Website Logo " />
+                </figure>
+                <div className='my-auto mx-3 hover:scale-101'>
+                  <h2 className='text-2xl font-poppins '>Gamess</h2>
+                </div>
+              </a>
+            </div>
+            <Searchbarmenu />
           {
             currentUser ?
               <>
@@ -37,7 +48,7 @@ export default function Dropdown({ isOpen, toggleDropdown }) {
               :
               <>
                 <a href='/login'>
-                  <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101' >Log in</button>
+                  <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101 mb-3' >Log in</button>
                 </a>
                 <a href="/signUp">
                   <button className='py-2 px-9 mx-5 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101'>Register</button>
@@ -46,21 +57,8 @@ export default function Dropdown({ isOpen, toggleDropdown }) {
           }
 
 
-          <div className='my-4 w-fit mx-auto hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>
-            <a href="/" className='flex '>
-              <figure className=''>
-                <img className='' src={logo} alt="Website Logo " />
-              </figure>
-              <div className='my-auto mx-3 hover:scale-101'>
-                <h2 className='text-4xl font-poppins '>Gamess</h2>
-              </div>
-            </a>
-          </div>
 
-          <Searchbarmenu />
-
-
-
+  
         </DpDrawer>
 
       </div>}

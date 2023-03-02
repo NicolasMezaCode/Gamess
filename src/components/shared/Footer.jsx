@@ -2,7 +2,7 @@ import React from 'react';
 import {AiFillLinkedin,AiFillGithub} from 'react-icons/ai'
 const Footer = () => {
   return (
-    <footer className="text-not-white bg-zinc-800 mx-auto w-full max-w-container px-1 sm:px-6 lg:px-8">
+    <footer className="text-not-white bg-zinc-800 mx-auto w-full max-w-container px-1 sm:px-6 lg:px-8  bottom-0 left-0">
       <div className="border-t border-slate-900/5 py-10">
         <p className="mt-5 text-center mobile:text-lg text-sm leading-6">
           Designed by: Nicolas Meza & Gabriel Soares</p>
