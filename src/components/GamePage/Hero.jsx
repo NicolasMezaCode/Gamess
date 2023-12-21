@@ -35,13 +35,12 @@ export default function Hero({ cover, rating, name, genres, platforms, modes,id 
     }
     return (
         <div className='flex min-h-fit relative'>
-            <div className='h-140 w-screen min-w-full  '>
+            <span className='h-140 w-screen min-w-full  '>
                 <figure style={{ backgroundImage: `url(${image})` }} className='bg-no-repeat bg-cover bg-center blur-md min-h-full min-w-full bg-fixed '></figure>
-            </div>
+            </span>
             <div className='absolute min-w-full  mobile:p-16 p:7 mt-16' >
 
                 <div className='laptop:grid grid-cols-2 laptop:gap-10'>
-
                     <div className='mx-auto tablet:w-128 mobile:w-96 w-72  h-132  laptop:mb-0 mb-10 '>
                         <img src={imageSmall} alt="" className='mx-auto w-screen  rounded-xl border-solid border-4 border-black shadow-xl hover:drop-shadow-lg transition-all duration-300 ease-linear ' />
                     </div>

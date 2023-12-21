@@ -17,7 +17,7 @@ export default function Navbar({ toggleDropdown }) {
           <h2 className='text-4xl font-poppins mx-auto hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>Gamess</h2>
         </a>
       </div>
-      <div className='p-3 pr-10 laptop:grid hidden grid-cols-7 '>
+      <div className='p-1 pr-10 laptop:grid hidden grid-cols-7 '>
         <div className='col-span-1 m-auto'>
           <a href="/" className=''>
             <div className='w-full inline-flex hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>

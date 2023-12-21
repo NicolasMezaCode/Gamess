@@ -1,27 +1,62 @@
 import React, { useState } from 'react'
-import readDead from '../../assets/read-dead.png'
+import msg2 from '../../assets/d87vcx7-d92db724-897d-4193-9b63-e5f6af087211.jpg'
 import elden from '../../assets/elden.webp'
 import spider from '../../assets/spiderman.jpg'
-import { useEffect } from 'react'
+import {Swiper,SwiperSlide} from 'swiper/react'
+import{Navigation,Autoplay} from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation';
 export default function Slider() {
-    const [counter,setCounter]=useState(1)
-    const images=[spider,elden,readDead]
-    const changeImage=()=>{
-        if(counter<images.length-1){
-            setCounter(prev=>prev+1)
-        }
-        else{setCounter(prev=>prev=0)}
-    }
-    useEffect(()=>{
-            const interval=setInterval(()=>{
-                changeImage()
-            },5000)
-            return ()=>clearInterval(interval)
-    },[counter])
 
   return (
-    <div className=''>
-        <figure className='flex justify-center items-center w-[100%] h-[32rem]'><img className='z-20 w-[100%] h-full object-cover' src={images[counter]} alt="" /></figure>
-    </div>
+    <>
+     <Swiper   autoplay={{delay:6000,disableOnInteraction:false}}  navigation={true} className='flex justify-center overflow-hidden items-center w-[100%]  pb-10'  modules={[Navigation,Autoplay]}>
+      <SwiperSlide>
+
+        <figure className="relative h-[32rem] w-[100%] flex items-center justify-center bg-black">
+            <img
+                className='absolute h-[32rem] w-[100%] object-cover opacity-50'
+                src={elden}
+                alt="elden ring image"
+            />
+            <div className="absolute h-fit text-white z-10 ">
+                <h1 className="text-7xl  font-bebas tracking-wider">Welcome to your starlight into the gaming world</h1>
+            </div>
+        </figure>
+      </SwiperSlide>
+      <SwiperSlide>
+        <figure className="relative h-[32rem] w-[100%] flex items-center justify-center bg-black">
+          <img
+              className='absolute h-[32rem]  w-[100%] object-cover opacity-50'
+              src={spider}
+              alt="spiderman"
+          />
+          <div className="absolute text-white z-10">
+            <h2 className="text-7xl font-bebas tracking-wider">Welcome to your starlight into the gaming world</h2>
+            <p className="text-lg font-semibold">Your description goes here.</p>
+          </div>
+        </figure>
+      </SwiperSlide>
+      <SwiperSlide>
+        <figure className="relative h-[32rem] w-[100%] flex items-center justify-center bg-black">
+          <img
+              className='absolute h-[32rem]  w-[100%] object-cover opacity-50'
+              src={msg2}
+              alt="metal gear image"
+          />
+          <div className="absolute text-white z-10">
+            <h2 className="text-7xl font-bebas tracking-wider">Welcome to your starlight into the gaming world</h2>
+            <p className="text-lg font-semibold">Your description goes here.</p>
+          </div>
+        </figure>
+
+      </SwiperSlide>
+</Swiper>
+
+
+
+
+
+    </>
   )
 }
