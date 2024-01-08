@@ -7,10 +7,10 @@ import{Navigation,Autoplay} from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation';
 export default function Slider() {
-
+  // autoplay={{delay:6000,disableOnInteraction:false}}
   return (
     <>
-     <Swiper   autoplay={{delay:6000,disableOnInteraction:false}}  navigation={true} className='flex justify-center overflow-hidden items-center w-[100%]  pb-10'  modules={[Navigation,Autoplay]}>
+     <Swiper navigation={true} className='flex justify-center overflow-hidden items-center w-[100%]  pb-10'  modules={[Navigation,Autoplay]}>
       <SwiperSlide>
 
         <figure className="relative h-[32rem] w-[100%] flex items-center justify-center bg-black">
