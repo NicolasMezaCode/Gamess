@@ -37,7 +37,7 @@ export default function AuthProvider({children}){
             gameIds:[],
             uid:uid,
         })
-        const dbId=createDoc.id
+        const dbId= await createDoc.id
         const user={
             username:username,
             uid:uid,
@@ -47,6 +47,7 @@ export default function AuthProvider({children}){
         }
         setCurrentUser(current=>current=user)
         Cookies.set('user',JSON.stringify(user))
+        navigate('/')
     }
     async function loginUser(email,password){
         const docRef=collection(db,"user")
@@ -70,10 +71,10 @@ export default function AuthProvider({children}){
                     setCurrentUser(current=>current=userLogin)
                     Cookies.set('user',JSON.stringify(userLogin))
                     navigate('/')
-
                 })
                 .catch((error) => {
                     const errorCode = error.code;
+                    console.log(errorCode)
                     const errorMessage = error.message;
                 });
         return auth
