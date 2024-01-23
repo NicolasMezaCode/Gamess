@@ -4,14 +4,15 @@ import Searchbarmenu from './Searchbar';
 import logo from '../../assets/game-icons_game-console.svg'
 import { useAuth } from '../../context/AuthContext'
 
+const DpDrawer = styled.div`
+  transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(-100%)'};
+`;
+
 export default function Dropdown({ isOpen, toggleDropdown }) {
   const { currentUser, logout } = useAuth()
   const handleLogout = () => {
     logout()
   }
-  const DpDrawer = styled.div`
-    transform: translateX(${isOpen ? '0' : '-100%'});
-    `
 
   return (
     <div>
@@ -20,7 +21,6 @@ export default function Dropdown({ isOpen, toggleDropdown }) {
 
 
         <DpDrawer isOpen={isOpen} className='p-3 absolute z-40 top-0 h-screen w-1/2 marker:w-6/12 bg-white transition-all duration-300 ease-linear'>
-        
           <div className='my-4 w-fit mx-auto hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>
               <a href="/" className='flex '>
                 <figure className=''>
