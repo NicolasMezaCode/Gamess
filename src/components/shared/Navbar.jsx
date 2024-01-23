@@ -11,20 +11,20 @@ export default function Navbar({ toggleDropdown }) {
   }
   return (
     <div className=''>
-      <div className='laptop:hidden flex m-3'>
+      <div className='laptop:hidden flex m-3 flex-row-reverse justify-between'>
         <FaBars onClick={toggleDropdown} className='text-2xl my-auto mx-3 hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer' />
-        <a href="/" className='mx-auto'>
+        <a href="/" className=''>
           <h2 className='text-4xl font-poppins mx-auto hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>Gamess</h2>
         </a>
       </div>
       <div className='p-1 pr-10 laptop:grid hidden grid-cols-7 '>
         <div className='col-span-1 m-auto'>
           <a href="/" className=''>
-            <div className='w-full inline-flex hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>
+            <div className='ml-9 w-full inline-flex hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>
               <figure className=''>
                 <img className='' src={logo} alt="Website Logo " />
               </figure>
-              <div className='my-auto mx-3 hover:scale-101'>
+              <div className=' my-auto mx-3 hover:scale-101'>
                 <h2 className='text-4xl font-poppins '>Gamess</h2>
               </div>
             </div>
