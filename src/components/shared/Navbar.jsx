@@ -13,7 +13,10 @@ export default function Navbar({ toggleDropdown }) {
     <div className=''>
       <div className='laptop:hidden flex m-3 flex-row-reverse justify-between'>
         <FaBars onClick={toggleDropdown} className='text-2xl my-auto mx-3 hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer' />
-        <a href="/" className=''>
+        <a href="/" className='flex items-center '>
+          <figure className=''>
+                <img className='' src={logo} alt="Website Logo " />
+          </figure>
           <h2 className='text-4xl font-poppins mx-auto hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>Gamess</h2>
         </a>
       </div>

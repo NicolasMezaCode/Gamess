@@ -20,7 +20,7 @@ export default function Slider() {
                 alt="elden ring image"
             />
             <div className="absolute h-fit text-white z-10 ">
-                <h1 className="text-7xl  font-bebas tracking-wider">Welcome to your starlight into the gaming world</h1>
+                <h1 className="text-5xl mx-11 text-center  sm:text-7xl  font-bebas tracking-wider h-auto">Welcome to your starlight into the gaming world</h1>
             </div>
         </figure>
       </SwiperSlide>
