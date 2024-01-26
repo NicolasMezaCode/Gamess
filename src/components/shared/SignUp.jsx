@@ -34,69 +34,70 @@ export default function SignUp() {
             try{
                 setError('')
                 setLoading(true)
+                console.log('User:', user)
                 let signUp = await createUser(user)
+                console.log('Sign up response:', signUp)
                 await signup(user.username, signUp.uid, user.photoId)
             }
-            catch{
+            catch(error){
+                console.log('Error:', error);// Log the error
                 setError('Failed to create an account')
             }
         }
         else (
-            setError('Failed to create an account')
+            setError('Failed to sign up  an account')
         )
         setLoading(false)
 
     }
     return (
-        <div >
-            <div className='py-24 laptop:mx-48 tablet:mx-36 mobile:mx-12 mx-8'>
-                <h1 className='text-5xl mb-10 font-bold'>Create a Account</h1>
-                <div className='laptop:grid relative grid-cols-2'>
-                    <div className=" flex flex-col ">
-                        <div>
-                            <div className='w-3/4'>
-                                {error && <p className='text-red-500'>{error}</p>}
-                                <form onSubmit={handleSubmit} className='flex flex-col '>
-                                    <div className='pb-3 w-full'>
+<div>
+    <div className='py-24 laptop:mx-48 tablet:mx-36 mobile:mx-12 mx-8'>
+        <h1 className='text-5xl mb-10 font-bold'>Create a Account</h1>
+        <div className='laptop:grid relative grid-cols-2'>
+            <div className=" flex flex-col ">
+                <div>
+                    <div className='w-3/4'>
+                        {error && <p className='text-red-500'>{error}</p>}
+                        <form onSubmit={handleSubmit} className='flex flex-col '>
+                            <div className='pb-3 w-full'>
 
-                                        <div className='w-full'>
-                                            <div className='py-2'>
-                                                <label className='text-lg' htmlFor="Password">Name</label>
-                                            </div>
-                                            <div className='min-w-full '>
-                                                <input className='min-w-full h-12 rounded-lg border-solid border-2 border-gray-400 indent-4 outline-blue-700 focus:shadow-button-shadow focus:shadow-blue-900 transition-all duration-300 ease-linear' ref={inputName} type="name" placeholder='Name' />
-                                            </div>
-                                        </div>
-
-                                        <div className='w-full'>
-                                            <div className='py-2'>
-                                                <label className='text-lg' htmlFor="Email">Email</label>
-                                            </div>
-                                            <div className='min-w-full'>
-                                                <input className='min-w-full h-12 rounded-lg border-solid border-2 border-gray-400 indent-4 outline-blue-700 focus:shadow-button-shadow focus:shadow-blue-900 transition-all duration-300 ease-linear' ref={inputEmail} type="email" placeholder='name@name.com' />
-                                            </div>
-                                        </div>
-
-
-                                        <div className='w-full'>
-                                            <div className='py-2'>
-                                                <label className='text-lg' htmlFor="Password">Password</label>
-                                            </div>
-                                            <div className='min-w-full '>
-                                                <input className='min-w-full h-12 rounded-lg border-solid border-2 border-gray-400 indent-4 outline-blue-700 focus:shadow-button-shadow focus:shadow-blue-900 transition-all duration-300 ease-linear' ref={inputPassword} type="password" placeholder='6+ Characters' />
-                                            </div>
-                                        </div>
-
-                                        <div className='pt-10 ml-2'>
-                                            <button className='py-3 px-16 rounded-md text-lg w-fit bg-medium-grey hover:bg-zinc-800 text-gray-200 hover:text-white transition-all duration-300 ease-linear' disabled={loading} type='submit'>Sign Up</button>
-                                        </div>
+                                <div className='w-full'>
+                                    <div className='py-2'>
+                                        <label className='text-lg' htmlFor="name">Name</label>
                                     </div>
-                                </form>
+                                    <div className='min-w-full '>
+                                        <input id="name" className='min-w-full h-12 rounded-lg border-solid border-2 border-gray-400 indent-4 outline-blue-700 focus:shadow-button-shadow focus:shadow-blue-900 transition-all duration-300 ease-linear' ref={inputName} type="text" placeholder='Name' />
+                                    </div>
+                                </div>
+
+                                <div className='w-full'>
+                                    <div className='py-2'>
+                                        <label className='text-lg' htmlFor="email">Email</label>
+                                    </div>
+                                    <div className='min-w-full'>
+                                        <input id="email" className='min-w-full h-12 rounded-lg border-solid border-2 border-gray-400 indent-4 outline-blue-700 focus:shadow-button-shadow focus:shadow-blue-900 transition-all duration-300 ease-linear' ref={inputEmail} type="email" placeholder='name@name.com' />
+                                    </div>
+                                </div>
+
+
+                                <div className='w-full'>
+                                    <div className='py-2'>
+                                        <label className='text-lg' htmlFor="password">Password</label>
+                                    </div>
+                                    <div className='min-w-full '>
+                                        <input id="password" className='min-w-full h-12 rounded-lg border-solid border-2 border-gray-400 indent-4 outline-blue-700 focus:shadow-button-shadow focus:shadow-blue-900 transition-all duration-300 ease-linear' ref={inputPassword} type="password" placeholder='6+ Characters' />
+                                    </div>
+                                </div>
+
+                                <div className='pt-10 ml-2'>
+                                    <button className='py-3 px-16 rounded-md text-lg w-fit bg-medium-grey hover:bg-zinc-800 text-gray-200 hover:text-white transition-all duration-300 ease-linear' disabled={loading} type='submit'>Sign Up</button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
-
-
+                </div>
+            </div>
 
                     <div className='laptop:pt-0 pt-16'>
                         <div>
