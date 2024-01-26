@@ -35,6 +35,9 @@ export default function SignUp() {
                 setError('')
                 setLoading(true)
                 let signUp = await createUser(user)
+                if (signUp instanceof Error) {
+                    throw signUp;
+                }
                 console.log('User created:', signUp)
             } catch(error) {
                 console.log('Error in createUser:', error)
