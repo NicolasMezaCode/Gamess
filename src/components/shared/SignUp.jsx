@@ -31,22 +31,26 @@ export default function SignUp() {
             photoId: `https://avatars.dicebear.com/api/bottts/${nameNoSpace}.svg`
         }
         if (user.username && user.email && user.password !== '' && user.password.length >= 6) {
-            try{
+            try {
                 setError('')
                 setLoading(true)
-                console.log('User:', user)
                 let signUp = await createUser(user)
-                console.log('Sign up response:', signUp)
-                await signup(user.username, signUp.uid, user.photoId)
-            }
-            catch(error){
-                console.log('Error:', error);// Log the error
+                console.log('User created:', signUp)
+            } catch(error) {
+                console.log('Error in createUser:', error)
                 setError('Failed to create an account')
             }
+        
+            try {
+                await signup(user.username, signUp.uid, user.photoId)
+                console.log('Signed up successfully')
+            } catch(error) {
+                console.log('Error in signup:', error)
+                setError('Failed to sign up an account')
+            }
+        } else {
+            setError('Failed to sign up an account')
         }
-        else (
-            setError('Failed to sign up  an account')
-        )
         setLoading(false)
 
     }
