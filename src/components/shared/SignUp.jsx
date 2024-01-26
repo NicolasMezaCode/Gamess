@@ -30,11 +30,12 @@ export default function SignUp() {
             password: inputPassword.current.value,
             photoId: `https://avatars.dicebear.com/api/bottts/${nameNoSpace}.svg`
         }
+        let signUp;
         if (user.username && user.email && user.password !== '' && user.password.length >= 6) {
             try {
                 setError('')
                 setLoading(true)
-                let signUp = await createUser(user)
+                signUp = await createUser(user)
                 if (signUp instanceof Error) {
                     throw signUp;
                 }
