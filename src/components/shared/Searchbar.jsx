@@ -12,7 +12,7 @@ export default function Searchbarmenu() {
     navigate(`/search/${name}`)
   }
   return (
-    <form onSubmit={handleSubmit} className="my-3 ml-14">
+    <form onSubmit={handleSubmit} className="my-3  laptop:ml-14">
       <Input
       className=' w-full rounded-lg border-solid border-2 border-gray-400 indent-4 outline-blue-700 focus:shadow-button-shadow focus:shadow-blue-900 transition-all duration-300 ease-linear'
       icon='search'

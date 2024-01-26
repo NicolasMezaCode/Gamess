@@ -18,7 +18,7 @@ export default function Dropdown({ isOpen, toggleDropdown }) {
     <div>
       {isOpen && <div className='h-full w-full z-30 absolute top-0 left-0 bg-black bg-opacity-30 transition-all duration-300 ease-linear '>
 
-        <DpDrawer isOpen={isOpen} className='p-3 absolute z-40 top-0 h-screen w-1/2 marker:w-6/12 bg-white transition-all duration-300 ease-linear'>
+        <DpDrawer isOpen={isOpen} className='p-3 absolute z-40 top-0 h-screen w-8/12 marker:w-6/12 bg-white transition-all duration-300 ease-linear'>
           <div className='my-4 w-fit mx-auto hover:text-wierdo-orange transition-all duration-300 ease-linear cursor-pointer'>
               <a href="/" className='flex '>
                 <figure className=''>

@@ -5,6 +5,7 @@ import { getMostRated } from '../../helpers/getMostRated'
 import RatedGame from './RatedGame'
 export default function MostRated() {
   const [mostRated,setMostrated]=useState([])
+  console.log(mostRated)
   const [isMobile,setIsMobile]=useState(false)
   const handleResize=()=>{
     if(window.innerWidth <= 1000){
