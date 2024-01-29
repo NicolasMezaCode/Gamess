@@ -28,32 +28,26 @@ export default function SignUp() {
             username: nameNoSpace,
             email: inputEmail.current.value,
             password: inputPassword.current.value,
-            photoId: `https://avatars.dicebear.com/api/bottts/${nameNoSpace}.svg`
+            photoId: `https://api.dicebear.com/7.x/${nameNoSpace}/svg`
         }
-        let signUp;
-        if (user.username && user.email && user.password !== '' && user.password.length >= 6) {
+        if (user.email !=='' && user.password !== '' && user.password.length >= 6) {
             try {
                 setError('')
                 setLoading(true)
-                signUp = await createUser(user)
-                if (signUp instanceof Error) {
-                    throw signUp;
+                await signup(user.email, user.password)
+                await createUser(user)
+                navigate('/')
+            }
+            catch(error) {
+                console.log('Error:', error.message)
+                if (error.code === 'auth/email-already-in-use') {
+                    setError('This email is already in use.')
+                } else if (error.code === 'auth/weak-password') {
+                    setError('Your password is too weak.')
+                } else {
+                    setError('Failed to create an account, please try again.')
                 }
-                console.log('User created:', signUp)
-            } catch(error) {
-                console.log('Error in createUser:', error)
-                setError('Failed to create an account')
             }
-        
-            try {
-                await signup(user.username, signUp.uid, user.photoId)
-                console.log('Signed up successfully')
-            } catch(error) {
-                console.log('Error in signup:', error)
-                setError('Failed to sign up an account')
-            }
-        } else {
-            setError('Failed to sign up an account')
         }
         setLoading(false)
 
