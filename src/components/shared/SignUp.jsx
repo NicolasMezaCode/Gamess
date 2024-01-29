@@ -28,7 +28,7 @@ export default function SignUp() {
             username: nameNoSpace,
             email: inputEmail.current.value,
             password: inputPassword.current.value,
-            photoId: `https://api.dicebear.com/7.x/${nameNoSpace}/svg`
+            photoId: `https://api.dicebear.com/7.x/bottts/svg?seed=${nameNoSpace}`
         }
         if (user.email !=='' && user.password !== '' && user.password.length >= 6) {
             try {
