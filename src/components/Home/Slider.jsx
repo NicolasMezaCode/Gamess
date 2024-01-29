@@ -45,7 +45,7 @@ export default function Slider() {
               alt="metal gear image"
           />
           <div className="absolute text-white z-10">
-            <h2 className="text-5xl mx-11 text-center  sm:text-7xl  font-bebas tracking-wider h-auto">Create a play-later list so you don't miss out on new launches :)</h2>
+            <h2 className="text-5xl mx-11 text-center  sm:text-7xl  font-bebas tracking-wider h-auto"> Don't miss out on new launches :)</h2>
 
           </div>
         </figure>
