@@ -7,10 +7,10 @@ import{Navigation,Autoplay} from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation';
 export default function Slider() {
-  // autoplay={{delay:6000,disableOnInteraction:false}}
+
   return (
     <>
-     <Swiper navigation={true} className='flex justify-center overflow-hidden items-center w-[100%]  pb-16'  modules={[Navigation,Autoplay]}>
+     <Swiper   autoplay={{delay:6000,disableOnInteraction:false}} navigation={true} className='flex justify-center overflow-hidden items-center w-[100%]  pb-16'  modules={[Navigation,Autoplay]}>
       <SwiperSlide>
 
         <figure className="relative h-[32rem] w-[100%] flex items-center justify-center bg-black">
@@ -32,9 +32,7 @@ export default function Slider() {
               alt="spiderman"
           />
           <div className="absolute text-white z-10 flex flex-col items-center">
-            <h2 className="text-5xl mx-11 text-center  sm:text-7xl  font-bebas tracking-wider h-auto">Check and make your own game reviews</h2>
-            <p className="text-2xl font-semibold">You can create your own narrative and share your opinion.</p>
-          </div>
+            <h2 className="text-5xl mx-11 text-center  sm:text-7xl  font-bebas tracking-wider h-auto">Check your favorite games</h2>          </div>
         </figure>
       </SwiperSlide>
       <SwiperSlide>

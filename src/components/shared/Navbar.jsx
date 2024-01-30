@@ -45,8 +45,8 @@ export default function Navbar({ toggleDropdown }) {
                   <div className='h-fit my-auto'>
                     <button onClick={handleLogout} className='py-2 px-9 rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101'>Log out</button>
                   </div>
-                  <div className='h-fit my-auto '>
-                    <a href={`/profile/${currentUser.uid}`} ><img src={`${currentUser.photoId}`} className='opacity-80 hover:opacity-100 px-6 hover:drop-shadow-xl transition-all duration-200 ease-linear' alt="" /></a>
+                  <div className='h-fit my-auto'>
+                    <a href={`/profile/${currentUser.uid}`} className='flex items-center ' ><img src={`${currentUser.photoId}`} className='opacity-80 hover:opacity-100 pl-6 max-h-16 hover:drop-shadow-xl transition-all duration-200 ease-linear' alt="" /><h5 className='font-extrabold'>You</h5></a>
                   </div>
                 </div>
 

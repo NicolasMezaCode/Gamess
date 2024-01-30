@@ -38,8 +38,11 @@ export default function Dropdown({ isOpen, toggleDropdown }) {
                   <div className='my-auto'>
                     <a href={`/profile/${currentUser.uid}`} ><img src={`${currentUser.photoId}`} className='opacity-80 hover:opacity-100 hover:drop-shadow-xl transition-all duration-200 ease-linear' alt="" /></a>
                   </div>
-                  <div className='w-fit my-auto mx-auto'>
+                  <div className='w-fit my-auto mx-auto flex flex-col items-center justify-center'>
                     <button onClick={handleLogout} className=' py-2 px-9  rounded-md text-white bg-medium-grey opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101'>Log out</button>
+                    < button className='flex items-center justify-center mt-3 py-2 px-9 mx-5 rounded-md text-white bg-red-400 opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101 ' onClick={toggleDropdown}>
+                      Close
+                    </button> 
                   </div>
                 </div>
 
@@ -54,9 +57,7 @@ export default function Dropdown({ isOpen, toggleDropdown }) {
                 </a>
               </>
           }
-              < button className='py-2 px-9 mx-5 rounded-md text-white bg-red-400 opacity-70 hover:opacity-100 transition-all duration-300 ease-linear cursor-pointer hover:scale-101 mt-3' onClick={toggleDropdown}>
-              Close
-            </button>
+
         </DpDrawer>
 
       </div>}

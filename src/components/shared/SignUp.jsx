@@ -28,15 +28,14 @@ export default function SignUp() {
             username: nameNoSpace,
             email: inputEmail.current.value,
             password: inputPassword.current.value,
-            photoId: `https://api.dicebear.com/7.x/bottts/svg?seed=${nameNoSpace}`
+            photoId: `https://api.dicebear.com/7.x/bottts/svg?seed=${nameNoSpace}&width=285&height=285`
         }
         if (user.email !=='' && user.password !== '' && user.password.length >= 6) {
             try {
                 setError('')
                 setLoading(true)
-                await signup(user.email, user.password)
-                await createUser(user)
-                navigate('/')
+                let signUp =await createUser(user)
+                await signup(user.username, signUp.uid, user.photoId)
             }
             catch(error) {
                 console.log('Error:', error.message)

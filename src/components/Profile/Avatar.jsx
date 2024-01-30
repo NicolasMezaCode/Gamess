@@ -2,7 +2,7 @@ import React from "react";
 
 
 export default function Avatar({username,photo}) {
-  const Avatar = `https://avatars.dicebear.com/api/bottts/${username}.svg`
+  const Avatar =`https://api.dicebear.com/7.x/bottts/svg?seed=${username}&width=285&height=285`
   return (
     <div>
       <div className="p-10 max-w-xl mx-auto rounded-3xl bg-medium-grey shadow-xl mt-7 mb-24">
